@@ -19,7 +19,9 @@ def parse_html(url):
   recipe_parts['directions'] = list_formatter(tree.xpath('//span[@class = "recipe-directions__list--item"]/text()')) # join into one string later?
   recipe_parts['name'] = tree.xpath('//h1[@class = "recipe-summary__h1"]/text()')[0]
   recipe_parts['type'] = list_formatter(tree.xpath('//span[@class = "toggle-similar__title"]/text()'))[2:] # first two are 'home' and 'recipe'
-  
+  recipe_parts['time'] = tree.xpath('//span[@class = "ready-in-time"]/text()')[0]
+  # find servings
+
   return recipe_parts
 
 # for testing purposes
