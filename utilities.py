@@ -6,8 +6,26 @@
 ###
 # ACTION ITEMS:
 #
-# get links from website - Jodie
-# get json response from website - Jodie
-# get parsed response - Kimberly
+# get links from website - Kimberly
+# get json response from website - Kimberly
+# get parsed response - Jodie
 # get ingredients, name, descriptor, tools, quantity - Ilham, Diane
 ###
+
+import string
+
+###
+# Removes empty strings in list and formats each item 
+#
+# @param: list of strings
+# @return: list of strings 
+###
+def list_formatter(lst):
+  # remove line breaks and extra spaces
+  for x in range(len(lst)):
+    lst[x] = ' '.join(lst[x].split())
+
+  # remove empty strings from list
+  lst = list(filter(None, lst))
+
+  return lst
