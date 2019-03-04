@@ -31,12 +31,12 @@ def parse_one_ingredient(listing):
 	measurement = "N/A"
 	for measure in known_measures:
 		if measure in rest:
-			# if measure == "to taste":
-			# 	measurement = "to taste" #apparently we have a problem with this  measure....
-			# else:
-			# 	word_index = rest.index(measure)
-			# 	measurement = rest[word_index:].split(" ")[0] #find where word is, extract the entire word to get plurality (eg clove -> cloves)
-			measurement = measure
+			if measure == "to taste":
+				measurement = "to taste" #apparently we have a problem with this  measure....
+			else:
+				word_index = rest.index(measure)
+				measurement = rest[word_index:].split(" ")[0] #find where word is, extract the entire word to get plurality (eg clove -> cloves)
+
 			break
 	# print(measurement)
 
