@@ -6,7 +6,10 @@
 ###
 # ACTION ITEMS:
 #
-# get ingredients, name, descriptor, tools, quantity - Ilham, Diane, Jodie, Kimberly
+# - methods per step : Jodie
+# - time per step: Kimberly
+# - tools per step: Diane
+# - one transformation: Ilham
 ###
 
 import string
