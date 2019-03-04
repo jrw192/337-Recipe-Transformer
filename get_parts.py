@@ -10,7 +10,6 @@ import re
 def parse_one_ingredient(listing):
 	print(listing)
 	listing = listing.split(",")[0]
-	c
 	fraction_re = '[0-9]+((/|\.)[0-9]+)?'
 	quantity = re.search(fraction_re, listing)
 	if quantity:
