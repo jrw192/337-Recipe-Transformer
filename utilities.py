@@ -6,10 +6,7 @@
 ###
 # ACTION ITEMS:
 #
-# get links from website - Kimberly
-# get json response from website - Kimberly
-# get parsed response - Jodie
-# get ingredients, name, descriptor, tools, quantity - Ilham, Diane
+# get ingredients, name, descriptor, tools, quantity - Ilham, Diane, Jodie, Kimberly
 ###
 
 import string
