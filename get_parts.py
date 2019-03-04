@@ -7,6 +7,7 @@ import re
 	# (optional) Descriptor (e.g. fresh, extra-virgin)
 	# (optional) Preparation (e.g. finely chopped
 
+#takes in one ingredient listing and returns a dictionary of name, quantity, measurement
 def parse_one_ingredient(listing):
 	print(listing)
 	listing = listing.split(",")[0]
@@ -47,6 +48,15 @@ def parse_one_ingredient(listing):
 
 	name = rest
 	print("name: %s, quantity: %s, measurement: %s" % (name, quantity, measurement))
+
+
+#takes in one step (e.g. cook for 15 minutes) and parses it into a dictionary of ingredient, tool, method, time
+def parse_one_step(step):
+	return
+
+#takes in all steps and parses it into a list of dictionary
+def parse_all_steps(steps_list):
+	return
 
 
 
