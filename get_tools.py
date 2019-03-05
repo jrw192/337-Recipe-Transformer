@@ -22,7 +22,7 @@ def get_tools():
 				tools.append(tool)
 				prevtools.append(tool)
 		if not tools:
-			tools=prevtools[0:]
+			tools=prevtools[0:] #if none of the tools are in the step most likely you are using previous tools from the previous step
 		print(tools)
 
 
