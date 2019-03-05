@@ -29,8 +29,8 @@ def parse_html(url):
 if __name__ == '__main__':
 	test_urls = ['https://www.allrecipes.com/recipe/223016/fresh-blueberry-cake/?internalSource=staff%20pick&referringId=17263&referringContentType=Recipe%20Hub', # cake
 	'https://www.allrecipes.com/recipe/222000/spaghetti-aglio-e-olio/?internalSource=hub%20recipe&referringContentType=Search&clickId=cardslot%203', # aglio e olio
-	'https://www.allrecipes.com/recipe/230818/pork-fried-rice/?internalSource=hub%20recipe&referringContentType=Search&clickId=cardslot%202'] # fried rice
-	
+	'https://www.allrecipes.com/recipe/230818/pork-fried-rice/?internalSource=hub%20recipe&referringContentType=Search&clickId=cardslot%202', # fried rice
+	'https://www.allrecipes.com/recipe/245119/biscuits-and-gravy-casserole/'] #casserole
 	print(parse_html(test_urls[0]))
 	print(parse_html(test_urls[1]))
 	print(parse_html(test_urls[2]))
