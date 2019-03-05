@@ -8,9 +8,9 @@ from utilities import list_formatter
 # @param: string - url
 # @return: dictionary - keys: part of the recipe; values: list of strings or string of contents
 ###
-def parse_html(url):
+def parse_html():
 	#added on for user input
-	
+	url = input("Enter the url for the recipe, then hit enter:\n")
   # retrieve page contents
 	page = requests.get(url)
 	tree = html.fromstring(page.content)
@@ -22,15 +22,15 @@ def parse_html(url):
 	recipe_parts['name'] = tree.xpath('//h1[@class = "recipe-summary__h1"]/text()')[0]
 	recipe_parts['type'] = list_formatter(tree.xpath('//span[@class = "toggle-similar__title"]/text()'))[2:] # first two are 'home' and 'recipe'
 	recipe_parts['time'] = tree.xpath('//span[@class = "ready-in-time"]/text()')[0]
-  # find servings
 	return recipe_parts
-
+	
 # for testing purposes
 if __name__ == '__main__':
-	test_urls = ['https://www.allrecipes.com/recipe/223016/fresh-blueberry-cake/?internalSource=staff%20pick&referringId=17263&referringContentType=Recipe%20Hub', # cake
-	'https://www.allrecipes.com/recipe/222000/spaghetti-aglio-e-olio/?internalSource=hub%20recipe&referringContentType=Search&clickId=cardslot%203', # aglio e olio
-	'https://www.allrecipes.com/recipe/230818/pork-fried-rice/?internalSource=hub%20recipe&referringContentType=Search&clickId=cardslot%202', # fried rice
-	'https://www.allrecipes.com/recipe/245119/biscuits-and-gravy-casserole/'] #casserole
-	print(parse_html(test_urls[0]))
-	print(parse_html(test_urls[1]))
-	print(parse_html(test_urls[2]))
+	parse_html()
+	# test_urls = ['https://www.allrecipes.com/recipe/223016/fresh-blueberry-cake/?internalSource=staff%20pick&referringId=17263&referringContentType=Recipe%20Hub', # cake
+	# 'https://www.allrecipes.com/recipe/222000/spaghetti-aglio-e-olio/?internalSource=hub%20recipe&referringContentType=Search&clickId=cardslot%203', # aglio e olio
+	# 'https://www.allrecipes.com/recipe/230818/pork-fried-rice/?internalSource=hub%20recipe&referringContentType=Search&clickId=cardslot%202'] # fried rice
+	
+	# print(parse_html(test_urls[0]))
+	# print(parse_html(test_urls[1]))
+	# print(parse_html(test_urls[2]))

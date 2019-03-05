@@ -1,10 +1,12 @@
 apron
+baking dish
 baking pan
 baking sheet
 barbecue grill
 baster
 basting brush
 blender
+bowl
 bread basket
 bread knife
 Bundt pan
@@ -70,7 +72,8 @@ mold
 mortar and pestle
 muffin pan
 nut cracker
-ovenoven mitts
+oven
+oven mitts
 pan
 parchment paper
 paring knife
@@ -79,13 +82,14 @@ peeler
 pepper mill
 percolator
 pie pan
+pie plate
 pitcher
 pizza cutter
 pizza stone
 platter
 poacher
 popcorn popper
-pot
+ pot
 pot holder
 poultry shears
 pressure cooker
