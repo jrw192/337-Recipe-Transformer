@@ -12,7 +12,7 @@ def get_tools():
 	with open("tools.txt", "r") as kf:
 		known_tools = kf.read().splitlines()
 	kf.close()
-
+	
 	#iterate through directions and find the tool for each step
 	prevtools=[]
 	for step in directions:
