@@ -10,7 +10,7 @@ from utilities import list_formatter
 ###
 def parse_html():
 	#added on for user input
-	# url = input("Enter the url for the recipe, then hit enter:\n")
+	url = input("Enter the url for the recipe, then hit enter:\n")
 
 	# for testing
 	# url = 'https://www.allrecipes.com/recipe/241601/sesame-chicken-for-slow-cooker/'
