@@ -19,7 +19,7 @@ m_f.close()
 
 #takes in one ingredient listing and returns an array of name, quantity, measurement, preparation
 def parse_one_ingredient(listing):
-	print(listing)
+	# print(listing)
 	rest = listing #we will be splitting the listing several times based on found values
 	#find preparation
 	preparation = "N/A"
@@ -70,8 +70,8 @@ def parse_one_ingredient(listing):
 		rest = rest.split(measurement)[1]
 
 	#find name
-	name = rest
-	print("name: %s, quantity: %s, measurement: %s, preparation: %s" % (name, quantity, measurement, preparation))
+	name = rest[1:] # leading space
+	# print("name: %s, quantity: %s, measurement: %s, preparation: %s" % (name, quantity, measurement, preparation))
 	return [name, quantity, measurement, preparation]
 
 #takes in an array of the ingredient list
