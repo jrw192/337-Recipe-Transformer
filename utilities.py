@@ -6,10 +6,10 @@
 ###
 # ACTION ITEMS:
 #
-# - methods per step : Jodie
-# - time per step: Kimberly
-# - tools per step: Diane
-# - one transformation: Ilham
+# - time per step, transform healthy code: Kimberly
+# - transformation dictionaries: Ilham
+# - transformation dictionaries: Diane
+# - ingredients from steps and times(?): Jodie
 ###
 
 import string
