@@ -6,7 +6,7 @@
 ###
 # ACTION ITEMS:
 #
-# - time per step, transform healthy code: Kimberly
+# - transform code: Kimberly
 # - transformation dictionaries: Ilham
 # - transformation dictionaries: Diane
 # - ingredients from steps and times(?): Jodie
