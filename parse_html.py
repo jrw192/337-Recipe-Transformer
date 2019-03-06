@@ -10,8 +10,13 @@ from utilities import list_formatter
 ###
 def parse_html():
 	#added on for user input
-	url = input("Enter the url for the recipe, then hit enter:\n")
-  # retrieve page contents
+	# url = input("Enter the url for the recipe, then hit enter:\n")
+
+	# for testing
+	# url = 'https://www.allrecipes.com/recipe/241601/sesame-chicken-for-slow-cooker/'
+	# url = 'https://www.allrecipes.com/recipe/230818/pork-fried-rice/?internalSource=hub%20recipe&referringContentType=Search&clickId=cardslot%202'
+  
+	# retrieve page contents
 	page = requests.get(url)
 	tree = html.fromstring(page.content)
 
@@ -21,7 +26,11 @@ def parse_html():
 	recipe_parts['directions'] = list_formatter(tree.xpath('//span[@class = "recipe-directions__list--item"]/text()')) # join into one string later?
 	recipe_parts['name'] = tree.xpath('//h1[@class = "recipe-summary__h1"]/text()')[0]
 	recipe_parts['type'] = list_formatter(tree.xpath('//span[@class = "toggle-similar__title"]/text()'))[2:] # first two are 'home' and 'recipe'
-	recipe_parts['time'] = tree.xpath('//span[@class = "ready-in-time"]/text()')[0]
+	try:
+		recipe_parts['time'] = tree.xpath('//span[@class = "ready-in-time"]/text()')[0]
+	except:
+		recipe_parts['time'] = 'N/A'
+	
 	return recipe_parts
 	
 # for testing purposes
