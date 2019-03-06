@@ -1,10 +1,10 @@
 from get_parts import parse_one_ingredient
 
 ###
-# Transform ingredients to and from healthy
+# Transform ingredients to and from vegetarian
 #
 # @param: steps - list of strings - steps of recipe
-#         food_dict - dictionary - keys: string - healthy/unhealty, values: string - unhealthy/healthy substitute
+#         food_dict - dictionary - keys: string - vegetarian/non-vegetarian, values: string - non-vegetarian/vegetarian substitute
 #         ingredients - list of strings - ingredients list for current recipe
 # @return: list of strings - transformed steps
 #          list of strings - transformed ingredients list
