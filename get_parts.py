@@ -19,7 +19,7 @@ m_f.close()
 
 #takes in one ingredient listing and returns an array of name, quantity, measurement, preparation
 def parse_one_ingredient(listing):
-	print(listing)
+	# print(listing)
 	rest = listing #we will be splitting the listing several times based on found values
 
 	#first let's get rid of stuff in parens to make my life easier
@@ -35,15 +35,12 @@ def parse_one_ingredient(listing):
 		prep_word = re.search(method_re, rest)
 
 		if prep_word:
-			print("found prep word: ", prep_word.group(0))
 			prep_word = prep_word.group(0)
-			# print("prep word!!:" , prep_word)
 
 			prep_re = '[a-z]+ly ' + prep_word
 			prep_phrase = re.search(prep_re, rest)
 
 			if prep_phrase: #find adverb (eg: thinly, finely)
-				print("PREP PHRASE: ", prep_phrase)
 				preparation = prep_phrase.group(0)
 				rest = rest.replace(preparation, '')
 			else:
@@ -86,7 +83,7 @@ def parse_one_ingredient(listing):
 	name = rest[1:] # leading space
 	name = name.lstrip()
 	name = name.rstrip()
-	print("name: %s, quantity: %s, measurement: %s, preparation: %s" % (name, quantity, measurement, preparation))
+	# print("name: %s, quantity: %s, measurement: %s, preparation: %s" % (name, quantity, measurement, preparation))
 	return [name, quantity, measurement, preparation]
 
 #takes in an array of the ingredient list
