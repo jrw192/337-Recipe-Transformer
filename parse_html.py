@@ -31,6 +31,7 @@ def parse_html():
 	except:
 		recipe_parts['time'] = 'N/A'
 	
+	# print(recipe_parts['type'])
 	return recipe_parts
 	
 # for testing purposes
