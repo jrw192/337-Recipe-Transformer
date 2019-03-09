@@ -42,12 +42,13 @@ def main():
 
   #parse directions
   parsed_directions = []
+  prevtools=[]
   for step in directions:
     parsed_step = {}
     parsed_step['times'] = get_steptimes(step)
     parsed_step['method'] = get_cooking_method(step)
     parsed_step['ingredients'] = get_ingredients_in_step(step, all_ingredients)
-    # parsed_step['tools'] = get_tools()
+    parsed_step['tools'], prevtools = get_tools(step, prevtools)
     
     parsed_directions.append(parsed_step)
   
