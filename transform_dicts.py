@@ -1,9 +1,3 @@
-# healthy to non-healthy
-# to_healthy = {
-#   'butter': 'olive oil',
-#   'cold cooked rice': 'cold cooked brown rice',
-#   'rice': 'brown rice'
-# }
 
 
 
