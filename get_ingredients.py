@@ -27,8 +27,11 @@ def get_ingredients_in_step(step, ingredient_list):
 			for start in range(0, len(ingred_arr)): #try different phrase start points
 				found_ingredient = find_one_ingredient(step, ingred_arr, start)
 				if found_ingredient:
-					skip = len(found_ingredient.split(' '))
-					ingredients_used.append(found_ingredient)
+					# skip = len(found_ingredient.split(' '))
+					# ingredients_used.append(found_ingredient)
+					skip = len(ingredient)
+					if ingredient not in ingredients_used:
+						ingredients_used.append(ingredient)
 					break #break if we find one.... if we found 'olive oil' we don't need to find 'oil'	
 	# print("ingredients used: ", ingredients_used)
 	return ingredients_used
@@ -61,11 +64,13 @@ def find_one_ingredient(step, ingred_arr, i):
 
 
 if __name__ == "__main__":
-	steps = ['Bring a large pot of lightly salted water to a boil. Cook spaghetti in the boiling water, stirring occasionally until cooked through but firm to the bite, about 12 minutes. Drain and transfer to a pasta bowl.', 'Combine garlic and olive oil in a cold skillet. Cook over medium heat to slowly toast garlic, about 10 minutes. Reduce heat to medium-low when olive oil begins to bubble. Cook and stir until garlic is golden brown, about another 5 minutes. Remove from heat.', 'Stir red pepper flakes, black pepper, and salt into the pasta. Pour in olive oil and garlic, and sprinkle on Italian parsley and half of the Parmigiano-Reggiano cheese; stir until combined.', 'Serve pasta topped with the remaining Parmigiano-Reggiano cheese.']
-	ingredients = ['1 pound uncooked spaghetti', '6 cloves garlic, thinly sliced', '1/2 cup olive oil', '1/4 teaspoon red pepper flakes, or to taste', 'salt and freshly ground black pepper to taste', '1/4 cup chopped fresh Italian parsley', '1 cup finely grated Parmigiano-Reggiano cheese']	
+	steps = ['Preheat an oven to 450 degrees F (230 degrees C).', 'Place chicken breasts between two sheets of heavy plastic (resealable freezer bags work well) on a solid, level surface. Firmly pound chicken with the smooth side of a meat mallet to a thickness of 1/2-inch. Season chicken thoroughly with salt and pepper.', 'Beat eggs in a shallow bowl and set aside.', 'Mix bread crumbs and 1/2 cup Parmesan cheese in a separate bowl, set aside.', 'Place flour in a sifter or strainer; sprinkle over chicken breasts, evenly coating both sides.', 'Dip flour coated chicken breast in beaten eggs. Transfer breast to breadcrumb mixture, pressing the crumbs into both sides. Repeat for each breast. Set aside breaded chicken breasts for about 15 minutes.', 'Heat 1 cup olive oil in a large skillet on medium-high heat until it begins to shimmer. Cook chicken until golden, about 2 minutes on each side. The chicken will finish cooking in the oven.', 'Place chicken in a baking dish and top each breast with about 1/3 cup of tomato sauce. Layer each chicken breast with equal amounts of mozzarella cheese, fresh basil, and provolone cheese. Sprinkle 1 to 2 tablespoons of Parmesan cheese on top and drizzle with 1 tablespoon olive oil.', 'Bake in the preheated oven until cheese is browned and bubbly, and chicken breasts are no longer pink in the center, 15 to 20 minutes. An instant-read thermometer inserted into the center should read at least 165 degrees F (74 degrees C).']
+	ingredients = ['4 skinless, boneless chicken breast halves', 'salt and freshly ground black pepper to taste', '2 eggs', '1 cup panko bread crumbs, or more as needed', '1/2 cup grated Parmesan cheese', '2 tablespoons all-purpose flour, or more if needed', '1 cup olive oil for frying', '1/2 cup prepared tomato sauce', '1/4 cup fresh mozzarella, cut into small cubes', '1/4 cup chopped fresh basil', '1/2 cup grated provolone cheese', '1/4 cup grated Parmesan cheese', '1 tablespoon olive oil']
 	parsed_ingredients = parse_ingredient_list(ingredients)
-	# print("parsed ingredients: ", parsed_ingredients)
+	print("parsed ingredients: ", parsed_ingredients)
 	all_ingredients = [item['name'] for item in parsed_ingredients]
-	# for step in steps:
-	ingredients_in_step = get_ingredients_in_step(steps[2], all_ingredients)
-	# print(ingredients_in_step)
+	print("all ingredients")
+	for step in steps:
+		print('step: ', step)
+		ingredients_in_step = get_ingredients_in_step(step, all_ingredients)
+		print(ingredients_in_step)

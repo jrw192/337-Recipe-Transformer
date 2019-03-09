@@ -139,12 +139,12 @@ def parse_one_ingredient(listing):
 
 		split_information.append(ingred_dict);
 
-	print("split_information: ", split_information)
+	# print("split_information: ", split_information)
 	return split_information
 
 #takes in an array of the ingredient list
 def parse_ingredient_list(ingredients):
-	print(stop_words)
+	# print(stop_words)
 	parsed_ingredients = []
 	for ingredient in ingredients:
 		parsed = parse_one_ingredient(ingredient)
@@ -163,7 +163,7 @@ def get_ingredient_name(string):
 	for item in tagged:
 		if item[0] in stop_words and item[0] != 'and':
 			break
-		if 'NN' in item[1] or 'JJ' in item[1]:
+		if 'NN' in item[1] or 'JJ' in item[1] or item[0] == 'and':
 			entities.append(item[0])
 	entities = ' '.join(entities)
 	return entities

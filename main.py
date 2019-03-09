@@ -21,8 +21,8 @@ def main():
   # get dictionary of recipe parts 
   #added on for user input
   url = input("Enter the url for the recipe, then hit enter:\n")
-  transform_type = input("Enter 0 for no transform, 1 for transformation to healthy, 2 for transformation to unhealthy, 3 for vegetarian, 4 for not-vegetarian, 5 for Indonesian, 6 for Zanzibari\n")
-  display_type = input("Enter 0 to view the full recipe, 1 to view the ingredients list, 2 to view all required tools, 3 to view all methods, 4 to view all steps.\n")
+  # transform_type = input("Enter 0 for no transform, 1 for transformation to healthy, 2 for transformation to unhealthy, 3 for vegetarian, 4 for not-vegetarian, 5 for Indonesian, 6 for Zanzibari\n")
+  # display_type = input("Enter 0 to view the full recipe, 1 to view the ingredients list, 2 to view all required tools, 3 to view all methods, 4 to view all steps.\n")
 
 
   recipe_dict = parse_html(url)
@@ -32,7 +32,6 @@ def main():
 
   #parse ingredients list
   parsed_ingredients = parse_ingredient_list(ingredients)
-  print(parsed_ingredients)
 
 
 
@@ -60,10 +59,18 @@ def main():
 
     parsed_directions.append(parsed_step)
   
-  print(parsed_directions)
+  # # print(parsed_directions)
+  # if display_type is 0:
+  #   print(parsed_ingredients)
+  #   print(parsed_directions)
+  # elif display_type is 1:
+  #   print(parsed_ingredients)
+
+  # new_name, new_ing, new_dir = to_veg(name, parsed_ingredients, parsed_directions, all_ingredients)
 
 
-
+  print('INGREDIENTS: ', parsed_ingredients)
+  print('DIRECTIONS: ', parsed_directions)
 
 
   # vegetarian transform test
@@ -72,19 +79,60 @@ def main():
   # healthy transform test
   # steps, ingredients = transform_healthy(recipe_dict, to_healthy)
 
-  # print (readable_recipe(ingredients, steps))
+  # readable = readable_recipe(name, parsed_ingredients, parsed_directions)
+  # for item in readable:
+  #   print(item)
 
 
-def readable_recipe(ingredients, steps):
-  output = 'Ingredients:\n'
+def readable_recipe(name, ingredients, steps):
+  output = ['Recipe: ' + name + '\nIngredients:\n', ]
+
   for ingredient in ingredients:
-    output += '\t- ' + ingredient + '\n'
+    ing_name = 'Ingredient: ' + ingredient['name']
+    ing_quant = 'Quantity: ' + ingredient['quantity']
+    ing_meas = 'Measure: ' + ingredient['measurement']
+    ing_prep = 'Preparation: ' + ingredient['preparation']
+    ingred_arr = [ing_name, ing_quant, ing_meas, ing_prep]
+    output.append('. '.join(ingred_arr))
     
-  output += '\nDirections:\n'
+  output.append('\nDirections:\n')
 
-  for step in steps:
-    output += step + '\n\n'
+  for i in range(0, len(steps)):
+    step = steps[i]
+    step_num = 'Step ' + str(i) + ':\n'
+
+    step_time = 'Time: '
+    step_ingred = 'Ingredients: '
+    step_method = 'Method: '
+
+    if len(step['times']) > 0:
+      step_time += ', or '.join(step['times'])
+    else:
+      step_time += 'N/A'
+
+    if step['method'] == '':
+      step_method += 'N/A'
+    else:
+      step_method += step['method']
+
+    print("INGREDIENTS: ", step['ingredients'])
+    if len(step['ingredients']) > 0:
+      step_ingred += ', '.join(step['ingredients'])
+    else:
+      step_ingred += 'N/A'
+    print(step_ingred)
+
+    step_tools = 'Tools:' + ' '.join(step['tools'])
+
+
+    step_arr = [step_time, step_method, step_ingred, step_tools]
+    output.append(step_num)
+    output.append('. '.join(step_arr))
+
+
   return output
+
+
 
 
 
@@ -94,3 +142,8 @@ if __name__ == '__main__':
                 'https://www.allrecipes.com/recipe/222000/spaghetti-aglio-e-olio/?internalSource=hub%20recipe&referringContentType=Search&clickId=cardslot%203', # aglio e olio
                 'https://www.allrecipes.com/recipe/230818/pork-fried-rice/?internalSource=hub%20recipe&referringContentType=Search&clickId=cardslot%202'] # fried rice
   main()
+
+
+
+
+
