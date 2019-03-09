@@ -66,7 +66,7 @@ def main():
   # elif display_type is 1:
   #   print(parsed_ingredients)
 
-  # new_name, new_ing, new_dir = to_veg(name, parsed_ingredients, parsed_directions, all_ingredients)
+  # new_name, new_ing, new_dir = to_veg(name (string), parsed_ingredients (change name)(list of dictionary), parsed_directions, all_ingredients)
 
 
   # print('INGREDIENTS: ', parsed_ingredients)
@@ -85,10 +85,11 @@ def main():
 
 
 def readable_recipe(name, ingredients, steps):
-  output = ['Recipe: ' + name + '\nIngredients:\n', ]
-
+  output = ['Recipe Name: ' + name + '\nIngredients:\n', ]
+  count=0
   for ingredient in ingredients:
-    ing_name = 'Ingredient: ' + ingredient['name']
+    count+=1
+    ing_name = 'Ingredient ' +str(count) + ': ' + ingredient['name']
     ing_quant = 'Quantity: ' + ingredient['quantity']
     ing_meas = 'Measure: ' + ingredient['measurement']
     ing_prep = 'Preparation: ' + ingredient['preparation']

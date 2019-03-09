@@ -42,5 +42,32 @@ pesto
 
 
 /////sicilian
+eggplant
+peppers
+tomatoes
+tuna
+sea bream
+sea bass
+cuttlefish
+swordfish
+mint cilantro
+couscous
+arancini
+pasta alla Norma
+cannoli
+granita
+cassata
+Marsala, red wine
+parsely 
+basil
+caponata vegetable salad
+cariocavallo cheese mozerella
+ragusano cheese mozerella
+canestrato cheese
+ricotta cheese
+pecorino siciliano cheese
+lemon siracusa lemon
+onion Giarratana Onion
+garlic Nubia Red Garlic
 
 
