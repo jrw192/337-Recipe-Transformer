@@ -25,7 +25,7 @@ def get_cooking_method(step):
 			methods.append(found_method)
 
 	# print('methods: ', methods)
-	primary_method = 'N/A'
+	primary_method = ''
 	if len(methods) > 0:
 		primary_method = methods[0]
 
