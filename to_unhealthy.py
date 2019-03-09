@@ -11,7 +11,7 @@ def transform_unhealthy():
 	name=recipe['name']
 	directions=recipe['directions']
 	ingredients=recipe["ingredients"]
-	print(ingredients)
+	# print(ingredients)
 	# print(directions)
 
 	#iterate through the name and change the name to the substitutions
