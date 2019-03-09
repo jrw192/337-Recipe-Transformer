@@ -68,8 +68,9 @@ tohealthy={
 	'milk' : 'almond milk',
 	# 'oil' : 'vegetable oil',
 	'soy sauce':'coconut aminos',
-	'fry' : 'grill or bake',
+	'frying' : 'grilling or baking',
 	'fried':'grilled or baked',
+	'fry';'grill or bake',
 	'cornstarch':'wheat flour',
 	'chocolate':'dark-chocolate'
 }
@@ -93,6 +94,7 @@ tounhealthy={
 	'grill':'fry',
 	'red pepper':'pepperoni',
 	'salt':'salt coated in oil',
+	'carrots':'licorice',
 	'carrot':'licorice',
 	'flour':'cornstarch',
 	'egg':'artificial egg',
