@@ -65,7 +65,7 @@ if __name__ == "__main__":
 	ingredients = ['1 pound uncooked spaghetti', '6 cloves garlic, thinly sliced', '1/2 cup olive oil', '1/4 teaspoon red pepper flakes, or to taste', 'salt and freshly ground black pepper to taste', '1/4 cup chopped fresh Italian parsley', '1 cup finely grated Parmigiano-Reggiano cheese']	
 	parsed_ingredients = parse_ingredient_list(ingredients)
 	# print("parsed ingredients: ", parsed_ingredients)
-	all_ingredients = [item[0] for item in parsed_ingredients]
+	all_ingredients = [item['name'] for item in parsed_ingredients]
 	# for step in steps:
 	ingredients_in_step = get_ingredients_in_step(steps[2], all_ingredients)
 	print(ingredients_in_step)
