@@ -49,11 +49,7 @@ def main():
 
   #parse directions
   parsed_directions = []
-<<<<<<< Updated upstream
   prevtools=[]
-=======
-  prev_tool = ''
->>>>>>> Stashed changes
   for step in directions:
     parsed_step = {}
     parsed_step['times'] = get_steptimes(step)
