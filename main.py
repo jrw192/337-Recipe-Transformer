@@ -1,7 +1,7 @@
 from parse_html import parse_html
-from transform_healthy import transform_healthy
-from transform_vegetarian import transform_vegetarian
 from transform_dicts import to_healthy, to_vegetarian
+from to_unhealthy import tranform_unhealthy
+from to_healthy import transform_healthy
 
 from get_parts import parse_ingredient_list
 from get_ingredients import get_ingredients_in_step
@@ -67,7 +67,7 @@ def main():
 
 
   # vegetarian transform test
-  steps, ingredients = transform_vegetarian(recipe_dict, to_vegetarian)
+  # steps, ingredients = transform_vegetarian(recipe_dict, to_vegetarian)
 
   # healthy transform test
   # steps, ingredients = transform_healthy(recipe_dict, to_healthy)

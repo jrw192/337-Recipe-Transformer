@@ -2,7 +2,7 @@ from parse_html import parse_html
 from transform_dicts import tounhealthy
 
 
-def transform_unhealthy():
+def transform_unhealthy(recipe):
 	#initialize a list and a counter and also get the parsed html
 	newingredients=[]
 	counti=-1
