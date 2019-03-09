@@ -63,9 +63,6 @@ def main():
   print(parsed_directions)
 
 
-  transform_vegetarian(raw_data, all_ingredients)
-
-
 
 
 
