@@ -99,7 +99,9 @@ to_unhealthydict={
 
 }
 
-#style of cuisine: Zanzibar Cuisine
-to_zanzibar={
-	
+#style of cuisine: Sicilian Cuisine (Sicily in Italy)
+to_siciliandict={
+	''
+	'ice cream':'gelato',
+		
 }
