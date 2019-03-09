@@ -51,6 +51,7 @@ def main():
   prevtools=[]
   for step in directions:
     parsed_step = {}
+    parsed_step['original'] = step
     parsed_step['times'] = get_steptimes(step)
     parsed_step['method'] = get_cooking_method(step)
     parsed_step['ingredients'] = get_ingredients_in_step(step, all_ingredients)
@@ -101,6 +102,8 @@ def readable_recipe(name, ingredients, steps):
   for i in range(0, len(steps)):
     step = steps[i]
     step_num = '\nStep ' + str(i) + ':'
+    step_og = step['original']
+
 
     step_time = 'Time: '
     step_ingred = 'Ingredients: '
@@ -126,6 +129,7 @@ def readable_recipe(name, ingredients, steps):
 
     step_arr = [step_method, step_ingred, step_tools, step_time]
     output.append(step_num)
+    output.append(step_og)
     output.append('. '.join(step_arr))
 
 
