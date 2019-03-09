@@ -32,7 +32,7 @@ def parse_html(url):
 		recipe_parts['time'] = 'N/A'
 	
 	# print(recipe_parts['type'])
-	print(recipe_parts)
+	# print(recipe_parts)
 	return recipe_parts
 	
 # for testing purposes

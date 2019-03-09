@@ -86,7 +86,7 @@ def main():
 
 
 def readable_recipe(name, ingredients, steps):
-  output = ['Recipe Name: ' + name + '\nIngredients:\n', ]
+  output = ['\nRecipe Name: ' + name + '\n' +'\nIngredients:\n', ]
   count=0
   for ingredient in ingredients:
     count+=1
@@ -97,7 +97,7 @@ def readable_recipe(name, ingredients, steps):
     ingred_arr = [ing_name, ing_quant, ing_meas, ing_prep]
     output.append('. '.join(ingred_arr))
     
-  output.append('\nDirections:\n')
+  output.append('\nDirections:')
 
   for i in range(0, len(steps)):
     step = steps[i]

@@ -9,7 +9,7 @@ time_units = ['second', 'minute', 'hour', 'day', 'until']
 
 #gets the times mentioned in ONE step of the recipe
 def get_steptimes(step):
-	print(step)
+	# print(step)
 	times = []
 	for unit in time_units:
 		temp_step = step #set a temp step variable 
