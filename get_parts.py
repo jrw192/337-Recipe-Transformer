@@ -23,11 +23,34 @@ def parse_one_ingredient(listing):
 	# print(listing)
 	rest = listing #we will be splitting the listing several times based on found values
 
-	#first let's get rid of stuff in parens to make my life easier
+	# this assumes that if parenthesis contains measurement/quantity,
+	# it describes how the amount that a packet/package holds
 	parens_found = re.search(r'[(][\S\s]+[)]', rest)
+	quantity = 0
+	other_measurement = ""
+	quantity_measurement_found = False
 	if parens_found:
-		parens_found = parens_found.group(0)
-		rest = rest.replace(parens_found, '')
+		temp = parens_found.group(0)[1:-1]
+
+		for measure in known_measures:
+			if measure in temp:
+				# measure
+				if measure == "to taste":
+					continue
+				other_measurement = measure
+
+				# quantity
+				fraction_re = '[0-9]+((/|\.)[0-9]+)?'
+				quantity = re.search(fraction_re, temp)
+				if quantity:
+					quantity = quantity.group(0)
+
+				break
+		
+		# if quantity != 1:
+		# 	measurement = measurement + " s"
+		rest = rest.replace(parens_found.group(0), '')
+		quantity_measurement_found = True
 
 	#find preparation
 	preparation = "N/A"
@@ -52,21 +75,23 @@ def parse_one_ingredient(listing):
 	if',' in rest:
 		rest = rest.split(",")[0]
 	
-	#find quantity
-	fraction_re = '[0-9]+((/|\.)[0-9]+)?'
-	quantity = re.search(fraction_re, rest)
-	if quantity:
-		quantity = quantity.group(0)
-	else:
-		quantity = "N/A"
-	if quantity != "N/A":
-		rest = rest.split(quantity)[1]
+	if not quantity_measurement_found:
+		#find quantity
+		fraction_re = '[0-9]+((/|\.)[0-9]+)?'
+		quantity = re.search(fraction_re, rest)
+		if quantity:
+			quantity = quantity.group(0)
+		else:
+			quantity = "N/A"
+		if quantity != "N/A":
+			rest = rest.split(quantity)[1]
+
 	#find measure
 	measurement = "N/A"
 	for measure in known_measures:
 		if measure in rest:
 			if measure == "to taste":
-				measurement = "to taste" #apparently we have a problem with this  measure....
+				measurement = "to taste" #apparently we have a problem with this measure....
 			else:
 				word_index = rest.index(measure)
 				measurement = rest[word_index:].split(" ")[0] #find where word is, extract the entire word to get plurality (eg clove -> cloves)
@@ -82,6 +107,9 @@ def parse_one_ingredient(listing):
 	#find name
 	#strip leading and trailing spaces
 	name = rest.lstrip().rstrip()
+
+	if quantity_measurement_found:
+		measurement = other_measurement
 
 	if 'and' in name:
 		name1, name2 = name.split('and')
@@ -102,7 +130,7 @@ def parse_one_ingredient(listing):
 
 		split_information.append(ingred_dict);
 
-	# print("split_information: ", split_information)
+	print("split_information: ", split_information)
 	return split_information
 
 #takes in an array of the ingredient list

@@ -70,7 +70,7 @@ tohealthy={
 	'soy sauce':'coconut aminos',
 	'frying' : 'grilling or baking',
 	'fried':'grilled or baked',
-	'fry';'grill or bake',
+	'fry':'grill or bake',
 	'cornstarch':'wheat flour',
 	'chocolate':'dark-chocolate'
 }

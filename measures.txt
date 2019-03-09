@@ -12,6 +12,8 @@ lb
 kilogram
 kg
 package
+pack
+packet
 dash
 clove
 slice
