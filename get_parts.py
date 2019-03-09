@@ -17,7 +17,7 @@ with open("measures.txt", "r") as m_f:
 	known_measures = m_f.read().splitlines()
 m_f.close()
 
-#takes in one ingredient listing and returns an array of name, quantity, measurement, preparation
+#takes in one ingredient listing and returns a dictionary of name, quantity, measurement, preparation
 def parse_one_ingredient(listing):
 	split_information = []
 	# print(listing)
@@ -85,12 +85,22 @@ def parse_one_ingredient(listing):
 
 	if 'and' in name:
 		name1, name2 = name.split('and')
-		name1 = name1.lstrip().rstrip()
-		name2 = name2.lstrip().rstrip()
-		split_information.append([name1, quantity, measurement, preparation])
-		split_information.append([name2, quantity, measurement, preparation])
+		names =  [name1.lstrip().rstrip(), name2.lstrip().rstrip()]
+		for name in names:
+			ingred_dict = {}
+			ingred_dict['name'] = name
+			ingred_dict['quantity'] = quantity
+			ingred_dict['measurement'] = measurement
+			ingred_dict['preparation'] = preparation
+			split_information.append(ingred_dict)
 	else:
-		split_information.append([name, quantity, measurement, preparation]);
+		ingred_dict = {}
+		ingred_dict['name'] = name
+		ingred_dict['quantity'] = quantity
+		ingred_dict['measurement'] = measurement
+		ingred_dict['preparation'] = preparation
+
+		split_information.append(ingred_dict);
 
 	# print("split_information: ", split_information)
 	return split_information
@@ -104,16 +114,6 @@ def parse_ingredient_list(ingredients):
 			parsed_ingredients.append(item)
 
 	return parsed_ingredients
-
-
-
-#takes in one step (e.g. cook for 15 minutes) and parses it into a dictionary of ingredient, tool, method, time
-	return
-
-#takes in all steps and parses it into a list of dictionary where keys=step number and value = parsed step 
-def parse_all_steps(steps_list):
-	return
-
 
 
 
