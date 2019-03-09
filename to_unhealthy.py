@@ -1,5 +1,5 @@
 from parse_html import parse_html
-from transform_dicts import tounhealthy
+from transform_dicts import to_unhealthydict
 
 
 def transform_unhealthy(recipe):
@@ -15,10 +15,10 @@ def transform_unhealthy(recipe):
 	# print(directions)
 
 	#iterate through the name and change the name to the substitutions
-	for subst in tounhealthy:
+	for subst in to_unhealthydict:
 		if subst in name.lower():
 			subst1=subst.title()
-			name=name.replace(subst1,tounhealthy[subst].title())
+			name=name.replace(subst1,to_unhealthydict[subst].title())
 	print(name)
 
 
@@ -26,10 +26,10 @@ def transform_unhealthy(recipe):
 		#iterate through the ingredients list and see if the words are in the tounhealthy dict and then change it accordingly.
 	for word in ingredients:
 		counti+=1
-		for subst in tounhealthy:
+		for subst in to_unhealthydict:
 			if subst in word:
 				# newingredients.append(subst)
-				word=word.replace(subst, tounhealthy[subst])
+				word=word.replace(subst, to_unhealthydict[subst])
 				ingredients[counti]=word
 		
 	print(ingredients)
@@ -37,9 +37,9 @@ def transform_unhealthy(recipe):
 	#iterate through the directions list and see if the words are in the tounhealthy dict and then change it accordingly.
 	for words in directions:
 		countd+=1
-		for ing in tounhealthy:
+		for ing in to_unhealthydict:
 			if ing in words:
-				words=words.replace(ing,tounhealthy[ing])
+				words=words.replace(ing,to_unhealthydict[ing])
 				directions[countd]=words
 
 	print(directions)

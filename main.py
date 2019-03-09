@@ -1,5 +1,5 @@
 from parse_html import parse_html
-from transform_dicts import to_healthy, to_vegetarian
+from transform_dicts import to_healthydict,to_unhealthydict, to_vegetariandict
 from to_unhealthy import tranform_unhealthy
 from to_healthy import transform_healthy
 

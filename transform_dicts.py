@@ -1,7 +1,7 @@
 
 
 
-to_vegetarian = {
+to_vegetariandict = {
   'boneless pork loin chop': 'tofurkey',
   'pork': 'tofurkey'
 }
@@ -21,7 +21,7 @@ to_vegetarian = {
 'Scramble egg in the skillet until completely set. Return the pork mixture to the skillet. Stir rice, peas, soy sauce, garlic powder, and ground ginger into the pork mixture; cook and stir until heated through, 7 to 10 minutes.']
 
 #original to healthy
-to_healthy={
+to_healthydict={
 	'beef': 'turkey',
 	'fried chicken': 'grilled chicken',
 	'turkey burger': 'veggie burger',
@@ -70,7 +70,7 @@ to_healthy={
 }
 
 # original to nonhealthy
-to_unhealthy={
+to_unhealthydict={
 	'sugar ':'corn syrup',
 	'olive oil':'lard',
 	'coconut oil':'lard',
@@ -97,4 +97,9 @@ to_unhealthy={
 	'onion':'fried onion',
 	'green pepper':'fried green onion'
 
+}
+
+#style of cuisine: Zanzibar Cuisine
+to_zanzibar={
+	
 }
