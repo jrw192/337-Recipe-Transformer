@@ -1,5 +1,9 @@
 import re
-
+import nltk
+from nltk.tokenize import TweetTokenizer
+from nltk.corpus import stopwords
+stop_words = list(stopwords.words("english"))
+tt = TweetTokenizer()
 # Ingredients
 	# Ingredient name
 	# Quantity
@@ -72,8 +76,12 @@ def parse_one_ingredient(listing):
 				rest = rest.replace(preparation, '')
 
 
-	if',' in rest:
-		rest = rest.split(",")[0]
+	# if',' in rest:
+	# 	temp_rest = rest.split(",")[1]
+	# 	for sw in stop_words:
+	# 		if sw in temp_rest:
+	# 			rest = rest.split(",")[0]
+	# 			break
 	
 	if not quantity_measurement_found:
 		#find quantity
@@ -106,7 +114,8 @@ def parse_one_ingredient(listing):
 		rest = rest.split(measurement)[1]
 	#find name
 	#strip leading and trailing spaces
-	name = rest.lstrip().rstrip()
+	# name = rest.lstrip().rstrip()
+	name = get_ingredient_name(rest)
 
 	if quantity_measurement_found:
 		measurement = other_measurement
@@ -130,11 +139,12 @@ def parse_one_ingredient(listing):
 
 		split_information.append(ingred_dict);
 
-	# print("split_information: ", split_information)
+	print("split_information: ", split_information)
 	return split_information
 
 #takes in an array of the ingredient list
 def parse_ingredient_list(ingredients):
+	print(stop_words)
 	parsed_ingredients = []
 	for ingredient in ingredients:
 		parsed = parse_one_ingredient(ingredient)
@@ -142,6 +152,21 @@ def parse_ingredient_list(ingredients):
 			parsed_ingredients.append(item)
 
 	return parsed_ingredients
+
+#if 'JJ' in tag => adjective
+#if 'NN' in tag => noun
+
+def get_ingredient_name(string):
+	entities = []
+	tokenized = tt.tokenize(string)
+	tagged = nltk.pos_tag(tokenized)
+	for item in tagged:
+		if item[0] in stop_words and item[0] != 'and':
+			break
+		if 'NN' in item[1] or 'JJ' in item[1]:
+			entities.append(item[0])
+	entities = ' '.join(entities)
+	return entities
 
 
 
@@ -152,6 +177,8 @@ if __name__ == "__main__":
 	# ingredients = ["1 (18.25 ounce) package devil's food cake mix", "1 (5.9 ounce) package instant chocolate pudding mix", "1 cup sour cream", "1 cup vegetable oil", "1/2 cup warm water", "2 cups semisweet chocolate chips"]
 	parsed = parse_ingredient_list(ingredients)
 	# print(parsed)
+	# myName = get_ingredient_name("one pound of flour")
+	# print(myName)
 
 
 

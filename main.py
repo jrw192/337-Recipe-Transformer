@@ -1,7 +1,7 @@
 from parse_html import parse_html
 from transform_healthy import transform_healthy
 from transform_vegetarian import transform_vegetarian
-# from transform_dicts import to_healthy, to_vegetarian
+from transform_dicts import to_healthy, to_vegetarian
 
 from get_parts import parse_ingredient_list
 from get_ingredients import get_ingredients_in_step
@@ -19,53 +19,67 @@ from get_tools import get_tools
 ###
 def main():
   # get dictionary of recipe parts 
-  recipe_dict = parse_html()
+  #added on for user input
+  url = input("Enter the url for the recipe, then hit enter:\n")
+  transform_type = input("Enter 0 for no transform, 1 for transformation to healthy, 2 for transformation to unhealthy, 3 for vegetarian, 4 for not-vegetarian, 5 for Indonesian, 6 for Zanzibari\n")
+  display_type = input("Enter 0 to view the full recipe, 1 to view the ingredients list, 2 to view all required tools, 3 to view all methods, 4 to view all steps.\n")
+
+
+  recipe_dict = parse_html(url)
   name = recipe_dict['name']
   ingredients = recipe_dict['ingredients']
 
-  #parse directions, steps should be split by sentences NOT the actual step numbers
+
+  #parse ingredients list
+  parsed_ingredients = parse_ingredient_list(ingredients)
+  print(parsed_ingredients)
+
+
+
+  #split directions, steps should be split by sentences NOT the actual steps described in allrecipes
   directions = []
   temp_directions = recipe_dict['directions']
   for direc in temp_directions:
     split_direc = direc.split('. ')
     directions += split_direc
 
-  
-  # parse each section and print
-
-  #parse ingredients list
-  parsed_ingredients = parse_ingredient_list(ingredients)
-  # print(parsed_ingredients)
 
   #get list of all ingredient names
   all_ingredients = [item['name'] for item in parsed_ingredients]
 
   #parse directions
   parsed_directions = []
+<<<<<<< Updated upstream
   prevtools=[]
+=======
+  prev_tool = ''
+>>>>>>> Stashed changes
   for step in directions:
     parsed_step = {}
     parsed_step['times'] = get_steptimes(step)
     parsed_step['method'] = get_cooking_method(step)
     parsed_step['ingredients'] = get_ingredients_in_step(step, all_ingredients)
     parsed_step['tools'], prevtools = get_tools(step, prevtools)
-    
+
+
     parsed_directions.append(parsed_step)
   
   print(parsed_directions)
+
+
+  transform_vegetarian(raw_data, all_ingredients)
 
 
 
 
 
   # vegetarian transform test
-  # steps, ingredients = transform_vegetarian(recipe_dict, to_vegetarian)
+  steps, ingredients = transform_vegetarian(recipe_dict, to_vegetarian)
 
   # healthy transform test
   # steps, ingredients = transform_healthy(recipe_dict, to_healthy)
 
   # print (readable_recipe(ingredients, steps))
-
 
 
 def readable_recipe(ingredients, steps):
@@ -78,7 +92,6 @@ def readable_recipe(ingredients, steps):
   for step in steps:
     output += step + '\n\n'
   return output
-
 
 
 

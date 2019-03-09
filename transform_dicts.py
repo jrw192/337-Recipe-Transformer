@@ -27,7 +27,7 @@ to_vegetarian = {
 'Scramble egg in the skillet until completely set. Return the pork mixture to the skillet. Stir rice, peas, soy sauce, garlic powder, and ground ginger into the pork mixture; cook and stir until heated through, 7 to 10 minutes.']
 
 #original to healthy
-tohealthy={
+to_healthy={
 	'beef': 'turkey',
 	'fried chicken': 'grilled chicken',
 	'turkey burger': 'veggie burger',
@@ -76,7 +76,7 @@ tohealthy={
 }
 
 # original to nonhealthy
-tounhealthy={
+to_unhealthy={
 	'sugar ':'corn syrup',
 	'olive oil':'lard',
 	'coconut oil':'lard',

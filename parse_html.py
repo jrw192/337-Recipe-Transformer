@@ -8,9 +8,9 @@ from utilities import list_formatter
 # @param: string - url
 # @return: dictionary - keys: part of the recipe; values: list of strings or string of contents
 ###
-def parse_html():
+def parse_html(url):
 	#added on for user input
-	url = input("Enter the url for the recipe, then hit enter:\n")
+	# url = input("Enter the url for the recipe, then hit enter:\n")
 
 	# for testing
 	# url = 'https://www.allrecipes.com/recipe/241601/sesame-chicken-for-slow-cooker/'
@@ -32,15 +32,16 @@ def parse_html():
 		recipe_parts['time'] = 'N/A'
 	
 	# print(recipe_parts['type'])
+	print(recipe_parts)
 	return recipe_parts
 	
 # for testing purposes
 if __name__ == '__main__':
-	parse_html()
-	# test_urls = ['https://www.allrecipes.com/recipe/223016/fresh-blueberry-cake/?internalSource=staff%20pick&referringId=17263&referringContentType=Recipe%20Hub', # cake
+	
+	test_urls = ['https://www.allrecipes.com/recipe/223016/fresh-blueberry-cake/?internalSource=staff%20pick&referringId=17263&referringContentType=Recipe%20Hub',] # cake
 	# 'https://www.allrecipes.com/recipe/222000/spaghetti-aglio-e-olio/?internalSource=hub%20recipe&referringContentType=Search&clickId=cardslot%203', # aglio e olio
 	# 'https://www.allrecipes.com/recipe/230818/pork-fried-rice/?internalSource=hub%20recipe&referringContentType=Search&clickId=cardslot%202'] # fried rice
-	
+	parse_html(test_urls[0])
 	# print(parse_html(test_urls[0]))
 	# print(parse_html(test_urls[1]))
 	# print(parse_html(test_urls[2]))
