@@ -1,0 +1,46 @@
+cod 
+potatoes
+rice
+corn
+sausages
+pork
+basil
+nuts
+olive oil
+ham
+sausage
+salami
+truffles
+parmesian
+tomatoes
+pecorino cheese
+peppers
+olives
+garlic
+artichokes
+oranges
+ricotta cheese
+eggplants
+zucchini
+anchovies
+sardines
+tuna
+capers
+penne
+maccheroni
+spaghetti
+linguine
+fusilli
+lasagne
+ravioli
+tortellini
+rigatoni
+fusilli
+gnochi dumplings
+durum wheat flour
+pesto
+
+
+/////sicilian
+
+
