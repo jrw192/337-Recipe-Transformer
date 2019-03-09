@@ -69,8 +69,8 @@ def main():
   # new_name, new_ing, new_dir = to_veg(name, parsed_ingredients, parsed_directions, all_ingredients)
 
 
-  print('INGREDIENTS: ', parsed_ingredients)
-  print('DIRECTIONS: ', parsed_directions)
+  # print('INGREDIENTS: ', parsed_ingredients)
+  # print('DIRECTIONS: ', parsed_directions)
 
 
   # vegetarian transform test
@@ -79,9 +79,9 @@ def main():
   # healthy transform test
   # steps, ingredients = transform_healthy(recipe_dict, to_healthy)
 
-  # readable = readable_recipe(name, parsed_ingredients, parsed_directions)
-  # for item in readable:
-  #   print(item)
+  readable = readable_recipe(name, parsed_ingredients, parsed_directions)
+  for item in readable:
+    print(item)
 
 
 def readable_recipe(name, ingredients, steps):
@@ -99,7 +99,7 @@ def readable_recipe(name, ingredients, steps):
 
   for i in range(0, len(steps)):
     step = steps[i]
-    step_num = 'Step ' + str(i) + ':\n'
+    step_num = '\nStep ' + str(i) + ':'
 
     step_time = 'Time: '
     step_ingred = 'Ingredients: '
@@ -115,17 +115,15 @@ def readable_recipe(name, ingredients, steps):
     else:
       step_method += step['method']
 
-    print("INGREDIENTS: ", step['ingredients'])
     if len(step['ingredients']) > 0:
       step_ingred += ', '.join(step['ingredients'])
     else:
       step_ingred += 'N/A'
-    print(step_ingred)
 
-    step_tools = 'Tools:' + ' '.join(step['tools'])
+    step_tools = 'Tools: ' + ', '.join(step['tools'])
 
 
-    step_arr = [step_time, step_method, step_ingred, step_tools]
+    step_arr = [step_method, step_ingred, step_tools, step_time]
     output.append(step_num)
     output.append('. '.join(step_arr))
 

@@ -27,9 +27,7 @@ def get_ingredients_in_step(step, ingredient_list):
 			for start in range(0, len(ingred_arr)): #try different phrase start points
 				found_ingredient = find_one_ingredient(step, ingred_arr, start)
 				if found_ingredient:
-					# skip = len(found_ingredient.split(' '))
-					# ingredients_used.append(found_ingredient)
-					skip = len(ingredient)
+					# print('found ingredient: ', ingredient)
 					if ingredient not in ingredients_used:
 						ingredients_used.append(ingredient)
 					break #break if we find one.... if we found 'olive oil' we don't need to find 'oil'	
@@ -38,7 +36,7 @@ def get_ingredients_in_step(step, ingredient_list):
 
 #fuck nested loops
 def find_one_ingredient(step, ingred_arr, i):
-	for count in range(len(ingred_arr), 1, -1): #try different phrase lengths, starting from longest possible strings
+	for count in range(len(ingred_arr), 0, -1): #try different phrase lengths, starting from longest possible strings
 		#eg 'olive oil', 'oil'
 
 		test_arr = ingred_arr[i:i+count]
