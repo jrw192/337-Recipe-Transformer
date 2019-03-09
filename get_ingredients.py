@@ -6,18 +6,18 @@ from get_parts import parse_ingredient_list
 #extract ingredients used in one step
 
 def get_ingredients_in_step(step, ingredient_list):
-	print("STEP: ", step)
+	# print("STEP: ", step)
 	ingredients_used = []
 
 	i = 0
 
 	for i in range(0, len(ingredient_list)):
 		ingredient = ingredient_list[i]
-		print("INGREDIENT: ", ingredient)
+		# print("INGREDIENT: ", ingredient)
 		ingred_arr = ingredient.split(" ") #split the ingredient name into a tokenized array eg ['olive', 'oil']
 		# print("ingred_arr: ", ingred_arr)
 		if len(ingred_arr) == 1:
-			ing_re = '\s' + ingred_arr[0] + '\W'
+			ing_re = '\s' + ingred_arr[0] + '[\s.,]'
 			ingred_search = re.search(ing_re, step)
 			if ingred_search:
 				ingred_name = ingred_search.group(0).lstrip().rstrip()
@@ -30,7 +30,7 @@ def get_ingredients_in_step(step, ingredient_list):
 					skip = len(found_ingredient.split(' '))
 					ingredients_used.append(found_ingredient)
 					break #break if we find one.... if we found 'olive oil' we don't need to find 'oil'	
-
+	# print("ingredients used: ", ingredients_used)
 	return ingredients_used
 
 #fuck nested loops
@@ -40,7 +40,7 @@ def find_one_ingredient(step, ingred_arr, i):
 
 		test_arr = ingred_arr[i:i+count]
 		test_name = " ".join(test_arr)
-		print("test_name: ", test_name)
+		# print("test_name: ", test_name)
 		ing_re = '\s' + test_name + '\W'
 		ingred_search = re.search(ing_re, step)
 
@@ -68,4 +68,4 @@ if __name__ == "__main__":
 	all_ingredients = [item['name'] for item in parsed_ingredients]
 	# for step in steps:
 	ingredients_in_step = get_ingredients_in_step(steps[2], all_ingredients)
-	print(ingredients_in_step)
+	# print(ingredients_in_step)

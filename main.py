@@ -22,7 +22,13 @@ def main():
   recipe_dict = parse_html()
   name = recipe_dict['name']
   ingredients = recipe_dict['ingredients']
-  directions = recipe_dict['directions']
+
+  #parse directions, steps should be split by sentences NOT the actual step numbers
+  directions = []
+  temp_directions = recipe_dict['directions']
+  for direc in temp_directions:
+    split_direc = direc.split('. ')
+    directions += split_direc
 
   
   # parse each section and print
@@ -37,11 +43,14 @@ def main():
   #parse directions
   parsed_directions = []
   for step in directions:
-    parsed_step = []
+    parsed_step = {}
     parsed_step['times'] = get_steptimes(step)
-    parsed_step['method'] = get_methods(step)
+    parsed_step['method'] = get_cooking_method(step)
     parsed_step['ingredients'] = get_ingredients_in_step(step, all_ingredients)
+    # parsed_step['tools'] = get_tools()
+    
     parsed_directions.append(parsed_step)
+  
   print(parsed_directions)
 
 

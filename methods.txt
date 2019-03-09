@@ -34,6 +34,8 @@ cube
 slice
 frozen
 freeze
+preheat
+heat
 dice
 whisk
 beat
@@ -59,3 +61,9 @@ mix
 scatter
 grind
 ground
+grease
+sift
+fold
+add
+toss
+reserve

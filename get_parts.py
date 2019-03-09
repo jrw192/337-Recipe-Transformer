@@ -130,7 +130,7 @@ def parse_one_ingredient(listing):
 
 		split_information.append(ingred_dict);
 
-	print("split_information: ", split_information)
+	# print("split_information: ", split_information)
 	return split_information
 
 #takes in an array of the ingredient list

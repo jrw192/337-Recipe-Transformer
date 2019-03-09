@@ -14,7 +14,7 @@ def get_steptimes(step):
 	for unit in time_units:
 		temp_step = step #set a temp step variable 
 		if unit == 'until':
-			time_re = 'until \w+'
+			time_re = 'until [\w\s]+'
 
 		else:
 			time_re = '\d+ ' + unit + '[s]{0,1}'
@@ -27,7 +27,7 @@ def get_steptimes(step):
 				times.append(time)
 				temp_step  = temp_step.split(time)[1] #continue searching with the rest of the step
 
-	print(times)
+	# print(times)
 	return times
 
 
