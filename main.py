@@ -11,6 +11,15 @@ from get_tools import get_tools
 
 # we can have links in main and pass to parser?
 
+  # print('INGREDIENTS: ', parsed_ingredients)
+  # print('DIRECTIONS: ', parsed_directions)
+
+
+  # vegetarian transform test
+  # steps, ingredients = transform_vegetarian(recipe_dict, to_vegetarian)
+
+  # healthy transform test
+  # steps, ingredients = transform_healthy(recipe_dict, to_healthy)
 ###
 # Runs the body of the program 
 #
@@ -21,13 +30,14 @@ def main():
   # get dictionary of recipe parts 
   #added on for user input
   url = input("Enter the url for the recipe, then hit enter:\n")
-  # transform_type = input("Enter 0 for no transform, 1 for transformation to healthy, 2 for transformation to unhealthy, 3 for vegetarian, 4 for not-vegetarian, 5 for Indonesian, 6 for Zanzibari\n")
+  # transform_type = input("Enter 0 for no transform, 1 for transformation to healthy, 2 for transformation to unhealthy, 3 for vegetarian, 4 for not-vegetarian, 5 for Indonesian, \n")
   # display_type = input("Enter 0 to view the full recipe, 1 to view the ingredients list, 2 to view all required tools, 3 to view all methods, 4 to view all steps.\n")
 
 
   recipe_dict = parse_html(url)
   name = recipe_dict['name']
   ingredients = recipe_dict['ingredients']
+
 
 
   #parse ingredients list
@@ -67,22 +77,28 @@ def main():
   # elif display_type is 1:
   #   print(parsed_ingredients)
 
+
   # new_name, new_ing, new_dir = to_veg(name (string), parsed_ingredients (change name)(list of dictionary), parsed_directions, all_ingredients)
+  # print(name)
+  # print(parsed_ingredients[0])
+  # print(parsed_directions)
+  # print(all_ingredients)
+
+  #original recipe
+  # if transform_type == 0:
+  # readable = readable_recipe(name, parsed_ingredients, parsed_directions)
+  # for item in readable:
+  #   print(item)
 
 
-  # print('INGREDIENTS: ', parsed_ingredients)
-  # print('DIRECTIONS: ', parsed_directions)
-
-
-  # vegetarian transform test
-  # steps, ingredients = transform_vegetarian(recipe_dict, to_vegetarian)
-
-  # healthy transform test
-  # steps, ingredients = transform_healthy(recipe_dict, to_healthy)
-
-  readable = readable_recipe(name, parsed_ingredients, parsed_directions)
+  #transform to healthy
+  # if transform_type == 1:
+  recipe_name,p_ingredients, p_directions = transform_healthy(name,parsed_ingredients,parsed_directions)
+  readable = readable_recipe(recipe_name, p_ingredients, p_directions)
   for item in readable:
     print(item)
+
+
 
 
 def readable_recipe(name, ingredients, steps):
