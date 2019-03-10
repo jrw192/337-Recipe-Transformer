@@ -87,7 +87,7 @@ def parse_one_ingredient(listing):
 		#find quantity
 		fraction_re = '\d+[\s]{0,1}\d*((/|\.)\d+)?|[.]\d+'
 		quantity = re.search(fraction_re, rest)
-		print(quantity)
+		# print(quantity)
 		if quantity:
 			quantity = quantity.group(0).lstrip().rstrip()
 			
@@ -141,7 +141,7 @@ def parse_one_ingredient(listing):
 
 		split_information.append(ingred_dict);
 
-	print("split_information: ", split_information)
+	# print("split_information: ", split_information)
 	return split_information
 
 #takes in an array of the ingredient list

@@ -133,7 +133,7 @@ def readable_recipe(name, ingredients, steps):
   for ingredient in ingredients:
     count+=1
     ing_name = 'Ingredient ' +str(count) + ': ' + ingredient['name']
-    ing_quant = 'Quantity: ' + str(ingredient['quantity'])
+    ing_quant = 'Quantity: ' + ingredient['quantity']
     ing_meas = 'Measure: ' + ingredient['measurement']
     ing_prep = 'Preparation: ' + ingredient['preparation']
     ingred_arr = [ing_name, ing_quant, ing_meas, ing_prep]
