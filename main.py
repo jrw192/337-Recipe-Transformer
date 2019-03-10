@@ -34,7 +34,7 @@ def main():
   reiteration(url) #added this function because in class he said the code shouldnt just exit, it should keep asking about transforms until you exit out of it
 
 def reiteration(url): #added this function because in class he said the code shouldnt just exit, it should keep asking about transforms until you exit out of it
-  transform_type = input("\nEnter Corrsponding Number for Transformation: \n"
+  transform_type = input("\nEnter Corresponding Number for Transformation: \n"
     " 0 for Original Recipe \n" " 1 for transformation to healthy \n" " 2 for transformation unhealthy \n" " 3 for transformation to vegetarian \n" 
     " 4 for transformation to non-vegetarian \n" " 5 for transformation to Style of Cusine: Sicilian Cuisine \n" " 9 to Exit \n")
      # 2 for transformation to unhealthy, 3 for vegetarian, 4 for not-vegetarian, 5 for Indonesian, \n")
@@ -137,7 +137,7 @@ def readable_recipe(name, ingredients, steps):
   for ingredient in ingredients:
     count+=1
     ing_name = 'Ingredient ' +str(count) + ': ' + ingredient['name']
-    ing_quant = 'Quantity: ' + ingredient['quantity']
+    ing_quant = 'Quantity: ' + str(ingredient['quantity'])
     ing_meas = 'Measure: ' + ingredient['measurement']
     ing_prep = 'Preparation: ' + ingredient['preparation']
     ingred_arr = [ing_name, ing_quant, ing_meas, ing_prep]
