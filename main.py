@@ -2,6 +2,7 @@ from parse_html import parse_html
 from transform_dicts import to_healthydict,to_unhealthydict, to_vegetariandict
 from to_unhealthy import transform_unhealthy
 from to_healthy import transform_healthy
+from to_sicilian import transform_siciliancuisine
 
 from get_parts import parse_ingredient_list
 from get_ingredients import get_ingredients_in_step
@@ -34,7 +35,8 @@ def main():
 
 def reiteration(url): #added this function because in class he said the code shouldnt just exit, it should keep asking about transforms until you exit out of it
   transform_type = input("\nEnter Corrsponding Number for Transformation: \n"
-    " 0 for Original Recipe \n" " 1 for transformation to healthy \n" " 2 for transformation unhealthy \n"  "-1 to Exit \n")
+    " 0 for Original Recipe \n" " 1 for transformation to healthy \n" " 2 for transformation unhealthy \n" " 3 for transformation to vegetarian \n" 
+    " 4 for transformation to non-vegetarian \n" " 5 for transformation to Style of Cusine: Sicilian Cuisine \n" "9 to Exit \n")
      # 2 for transformation to unhealthy, 3 for vegetarian, 4 for not-vegetarian, 5 for Indonesian, \n")
   # display_type = input("Enter 0 to view the full recipe, 1 to view the ingredients list, 2 to view all required tools, 3 to view all methods, 4 to view all steps.\n")
   
@@ -116,14 +118,15 @@ def reiteration(url): #added this function because in class he said the code sho
 
   #transform to Sicilian Cuisine
   elif transform_type == "5":
-    recipe_names,p_ingredient, p_direction = transform_unhealthy(name,parsed_ingredients,parsed_directions)
+    recipe_names,p_ingredient, p_direction = transform_siciliancuisine(name,parsed_ingredients,parsed_directions)
     readable = readable_recipe(recipe_names, p_ingredient, p_direction)
+    print('\nSicilian Style Cuisine:') #should i add this to the name
     for item in readable:
       print(item)
     reiteration(url)
 
   #exit out of the code
-  elif transform_type == '-1':
+  elif transform_type == '9':
     print("Now exiting...")
 
 

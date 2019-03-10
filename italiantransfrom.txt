@@ -42,32 +42,51 @@ pesto
 
 
 /////sicilian
-eggplant
-peppers
-tomatoes
-tuna
-sea bream
-sea bass
-cuttlefish
-swordfish
-mint cilantro
-couscous
-arancini
-pasta alla Norma
-cannoli
-granita
-cassata
-Marsala, red wine
-parsely 
-basil
-caponata vegetable salad
-cariocavallo cheese mozerella
-ragusano cheese mozerella
-canestrato cheese
-ricotta cheese
-pecorino siciliano cheese
-lemon siracusa lemon
-onion Giarratana Onion
-garlic Nubia Red Garlic
+?meatballs sea urchin
+?onion Giarratana Onion 
+?mexican style cheese mozerella*
+meatsauce ragu*
+tomato Pachino tomato*
+noodles spaghetti*
+broth soup*
+tilapi sea bream*
+salmon bluefin tuna*
+cilantro mint*
+shark swordfish*
+marlin swordfish*
+donot cannoli*
+red wine Marsala*
+wine Marsala*
+green bean fava bean *
+lima bean fava bean*
+salt sea salt*
+herring sardines*
+pesto zogghiu*
+quinoa couscous * 
+vegetable oil olive oil*
+cocunut oil olive oil*
+ground beef ground veal*
+beef lamb*
+celery fennels *
+sorbert granita *
+flour durum wheat/semolina *
+orange moro orange*
+provolone caciocavallo*
+mozerella caciocavallo*
+american pecorino*
+chedder caciocavallo*
+parmesan pecorino*
+gruyere maiorchino*
+cottage ricotta*
+cream cheese ricotta*
+blue cheese gorgonzola*
+meunster ragusano*
+guda canestrato*
+swiss tuma*
+feta ricotta*
+garlic Nubia Red Garlic *
+chocolate Modica chocolate *
+lemon Siracusa lemon*
+grill fry*
 
 

@@ -19,9 +19,9 @@ def transform_siciliancuisine(name, ingredients, directions):
 	for dicts in ingredients:
 		counti+=1
 		for subst in to_siciliandict:
-			if subst in dicts['name']:
+			if subst in dicts['name'].lower():
 				# newingredients.append(subst)
-				dicts['name']=dicts['name'].replace(subst, to_siciliandict[subst])
+				dicts['name']=dicts['name'].lower().replace(subst, to_siciliandict[subst])
 				ingredients[counti]['name']=dicts['name']
 		
 
@@ -30,17 +30,17 @@ def transform_siciliancuisine(name, ingredients, directions):
 		countd+=1
 		countpi=-1
 		for ing in to_siciliandict:
-			if ing in dcts['original']:
-				dcts['original']=dcts['original'].replace(ing,to_siciliandict[ing])
+			if ing in dcts['original'].lower():
+				dcts['original']=dcts['original'].lower().replace(ing,to_siciliandict[ing])
 				directions[countd]['original']=dcts['original']
-			if ing in dcts['method']:
-				dcts['method']=dcts['method'].replace(ing,to_siciliandict[ing])
+			if ing in dcts['method'].lower():
+				dcts['method']=dcts['method'].lower().replace(ing,to_siciliandict[ing])
 				directions[countd]['method']=dcts['method'] 
 		for ingredient in dcts['ingredients']:
 			countpi+=1
 			for ing in to_siciliandict:
-				if ing in ingredient:
-					ingredient=ingredient.replace(ing, to_siciliandict[ing])
+				if ing in ingredient.lower():
+					ingredient=ingredient.lower().replace(ing, to_siciliandict[ing])
 			dcts['ingredients'][countpi]=dcts['ingredients'][countpi].replace(dcts['ingredients'][countpi],ingredient)
 
 
