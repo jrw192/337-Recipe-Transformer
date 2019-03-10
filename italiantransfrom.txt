@@ -43,7 +43,7 @@ pesto
 
 /////sicilian
 ?meatballs sea urchin
-?onion Giarratana Onion 
+onion Giarratana Onion 
 ?mexican style cheese mozerella*
 meatsauce ragu*
 tomato Pachino tomato*
