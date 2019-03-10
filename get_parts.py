@@ -44,7 +44,7 @@ def parse_one_ingredient(listing):
 				other_measurement = measure
 
 				# quantity
-				fraction_re = '[0-9]+((/|\.)[0-9]+)?'
+				fraction_re = '\d+[\s]{0,1}((/|\.)\d+)?|[.]\d+'
 				quantity = re.search(fraction_re, temp)
 				if quantity:
 					quantity = quantity.group(0)
@@ -85,10 +85,13 @@ def parse_one_ingredient(listing):
 	
 	if not quantity_measurement_found:
 		#find quantity
-		fraction_re = '\d+((/|\.)\d+)?|[.]\d+'
+		fraction_re = '\d+[\s]{0,1}((/|\.)\d+)?|[.]\d+'
+		print('REST: ', rest)
 		quantity = re.search(fraction_re, rest)
+		print(quantity)
 		if quantity:
 			quantity = quantity.group(0)
+			
 		else:
 			quantity = ''
 		if quantity != '':
@@ -120,7 +123,7 @@ def parse_one_ingredient(listing):
 	if quantity_measurement_found:
 		measurement = other_measurement
 
-	if 'and' in name:
+	if ' and ' in name:
 		name1, name2 = name.split('and')
 		names =  [name1.lstrip().rstrip(), name2.lstrip().rstrip()]
 		for name in names:
@@ -139,7 +142,7 @@ def parse_one_ingredient(listing):
 
 		split_information.append(ingred_dict);
 
-	# print("split_information: ", split_information)
+	print("split_information: ", split_information)
 	return split_information
 
 #takes in an array of the ingredient list
@@ -173,10 +176,11 @@ def get_ingredient_name(string):
 
 
 if __name__ == "__main__":
-	ingredients = ['0.25 pound uncooked spaghetti', '.6 cloves garlic, thinly sliced', '1/2 cup olive oil', '1/4 teaspoon red pepper flakes, or to taste', 'salt and freshly ground black pepper to taste', '1/4 cup chopped fresh Italian parsley', '1 cup finely grated Parmigiano-Reggiano cheese']
+	ingredients =  ['2 pounds white carp, cut into large chunks', '1 tablespoon vegetable oil', '1 tablespoon red chile powder', '1 tablespoon ground turmeric', '1 1/2 teaspoons salt', '1/4 cup tamarind pulp', '1 cup warm water', '1/4 cup oil', '1/2 teaspoon cumin seeds', '1 large onion, minced', '1 1/2 tablespoons garlic paste', '2 tablespoons red chile powder', '2 tablespoons ground coriander', '1 pinch salt to taste', '1 tablespoon chopped fresh coriander (cilantro), or to taste']
 	steps = ['Bring a large pot of lightly salted water to a boil. Cook spaghetti in the boiling water, stirring occasionally until cooked through but firm to the bite, about 12 minutes. Drain and transfer to a pasta bowl.', 'Combine garlic and olive oil in a cold skillet. Cook over medium heat to slowly toast garlic, about 10 minutes. Reduce heat to medium-low when olive oil begins to bubble. Cook and stir until garlic is golden brown, about another 5 minutes. Remove from heat.', 'Stir red pepper flakes, black pepper, and salt into the pasta. Pour in olive oil and garlic, and sprinkle on Italian parsley and half of the Parmigiano-Reggiano cheese; stir until combined.', 'Serve pasta topped with the remaining Parmigiano-Reggiano cheese.']
 	# ingredients = ["1 (18.25 ounce) package devil's food cake mix", "1 (5.9 ounce) package instant chocolate pudding mix", "1 cup sour cream", "1 cup vegetable oil", "1/2 cup warm water", "2 cups semisweet chocolate chips"]
-	parsed = parse_ingredient_list(ingredients)
+	# parsed = parse_ingredient_list(ingredients)
+	parsed = parse_one_ingredient(ingredients[4])
 	# print(parsed)
 	# myName = get_ingredient_name("one pound of flour")
 	# print(myName)

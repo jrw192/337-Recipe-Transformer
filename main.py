@@ -76,12 +76,8 @@ def reiteration(url): #added this function because in class he said the code sho
 
     parsed_directions.append(parsed_step)
   
-  # # print(parsed_directions)
-  # if display_type is 0:
-  #   print(parsed_ingredients)
-  #   print(parsed_directions)
-  # elif display_type is 1:
-  #   print(parsed_ingredients)
+  print('parsed directions: ' , parsed_directions)
+  print('parsed ingredients: ', parsed_ingredients)
 
 
   # new_name, new_ing, new_dir = to_veg(name (string), parsed_ingredients (change name)(list of dictionary), parsed_directions, all_ingredients)
