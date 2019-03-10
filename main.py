@@ -76,8 +76,8 @@ def reiteration(url): #added this function because in class he said the code sho
 
     parsed_directions.append(parsed_step)
   
-  print('parsed directions: ' , parsed_directions)
-  print('parsed ingredients: ', parsed_ingredients)
+  # print('parsed directions: ' , parsed_directions)
+  # print('parsed ingredients: ', parsed_ingredients)
 
 
   # new_name, new_ing, new_dir = to_veg(name (string), parsed_ingredients (change name)(list of dictionary), parsed_directions, all_ingredients)
@@ -110,7 +110,13 @@ def reiteration(url): #added this function because in class he said the code sho
     reiteration(url)
 
   #transform to vegetarian
+  elif transform_type =="3":
+    pass
+
   #transform to non-vegetarian
+  elif transform_type =="4":
+    pass
+
 
   #transform to Sicilian Cuisine
   elif transform_type == "5":
@@ -133,9 +139,9 @@ def readable_recipe(name, ingredients, steps):
   for ingredient in ingredients:
     count+=1
     ing_name = 'Ingredient ' +str(count) + ': ' + ingredient['name']
-    ing_quant = 'Quantity: ' + ingredient['quantity']
-    ing_meas = 'Measure: ' + ingredient['measurement']
-    ing_prep = 'Preparation: ' + ingredient['preparation']
+    ing_quant = 'Quantity: ' + str(ingredient['quantity'])
+    ing_meas = 'Measure: ' + str(ingredient['measurement'])
+    ing_prep = 'Preparation: ' + str(ingredient['preparation'])
     ingred_arr = [ing_name, ing_quant, ing_meas, ing_prep]
     output.append('. '.join(ingred_arr))
     
