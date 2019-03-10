@@ -111,6 +111,16 @@ def reiteration(url): #added this function because in class he said the code sho
       print(item)
     reiteration(url)
 
+  #transform to vegetarian
+  #transform to non-vegetarian
+
+  #transform to Sicilian Cuisine
+  elif transform_type == "5":
+    recipe_names,p_ingredient, p_direction = transform_unhealthy(name,parsed_ingredients,parsed_directions)
+    readable = readable_recipe(recipe_names, p_ingredient, p_direction)
+    for item in readable:
+      print(item)
+    reiteration(url)
 
   #exit out of the code
   elif transform_type == '-1':
