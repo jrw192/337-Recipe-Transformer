@@ -44,10 +44,10 @@ def parse_one_ingredient(listing):
 				other_measurement = measure
 
 				# quantity
-				fraction_re = '\d+[\s]{0,1}((/|\.)\d+)?|[.]\d+'
+				fraction_re = '\d+[\s]{0,1}\d*((/|\.)\d+)?|[.]\d+'
 				quantity = re.search(fraction_re, temp)
 				if quantity:
-					quantity = quantity.group(0)
+					quantity = quantity.group(0).lstrip().rstrip()
 
 				break
 		
@@ -85,12 +85,11 @@ def parse_one_ingredient(listing):
 	
 	if not quantity_measurement_found:
 		#find quantity
-		fraction_re = '\d+[\s]{0,1}((/|\.)\d+)?|[.]\d+'
-		print('REST: ', rest)
+		fraction_re = '\d+[\s]{0,1}\d*((/|\.)\d+)?|[.]\d+'
 		quantity = re.search(fraction_re, rest)
 		print(quantity)
 		if quantity:
-			quantity = quantity.group(0)
+			quantity = quantity.group(0).lstrip().rstrip()
 			
 		else:
 			quantity = ''
