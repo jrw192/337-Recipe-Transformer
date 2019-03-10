@@ -3,8 +3,7 @@ from transform_dicts import to_healthydict
 
 
 def transform_healthy(name, ingredients, directions):
-	#initialize a list and a counter and also get the parsed html
-	newingredients=[]
+	#create counters for the ingredients and directions
 	counti=-1
 	countd=-1
 

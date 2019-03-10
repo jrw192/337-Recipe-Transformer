@@ -30,10 +30,14 @@ def main():
   # get dictionary of recipe parts 
   #added on for user input
   url = input("Enter the url for the recipe, then hit enter:\n")
-  # transform_type = input("Enter 0 for no transform, 1 for transformation to healthy, 2 for transformation to unhealthy, 3 for vegetarian, 4 for not-vegetarian, 5 for Indonesian, \n")
+  reiteration(url) #added this function because in class he said the code shouldnt just exit, it should keep asking about transforms until you exit out of it
+
+def reiteration(url): #added this function because in class he said the code shouldnt just exit, it should keep asking about transforms until you exit out of it
+  transform_type = input("\nEnter Corrsponding Number for Transformation: \n"
+    " 0 for Original Recipe \n" " 1 for transformation to healthy \n" " 2 for transformation unhealthy \n"  "-1 to Exit \n")
+     # 2 for transformation to unhealthy, 3 for vegetarian, 4 for not-vegetarian, 5 for Indonesian, \n")
   # display_type = input("Enter 0 to view the full recipe, 1 to view the ingredients list, 2 to view all required tools, 3 to view all methods, 4 to view all steps.\n")
-
-
+  
   recipe_dict = parse_html(url)
   name = recipe_dict['name']
   ingredients = recipe_dict['ingredients']
@@ -85,19 +89,32 @@ def main():
   # print(all_ingredients)
 
   #original recipe
-  # if transform_type == 0:
-  # readable = readable_recipe(name, parsed_ingredients, parsed_directions)
-  # for item in readable:
-  #   print(item)
-
+  if transform_type == "0":
+    readable = readable_recipe(name, parsed_ingredients, parsed_directions)
+    for item in readable:
+      print(item)
+    reiteration(url)
 
   #transform to healthy
-  # if transform_type == 1:
-  recipe_name,p_ingredients, p_directions = transform_healthy(name,parsed_ingredients,parsed_directions)
-  readable = readable_recipe(recipe_name, p_ingredients, p_directions)
-  for item in readable:
-    print(item)
+  elif transform_type == "1":
+    recipe_name,p_ingredients, p_directions = transform_healthy(name,parsed_ingredients,parsed_directions)
+    readable = readable_recipe(recipe_name, p_ingredients, p_directions)
+    for item in readable:
+      print(item)
+    reiteration(url)
 
+  #transform to unhealthy
+  elif transform_type == "2":
+    recipe_names,p_ingredient, p_direction = transform_unhealthy(name,parsed_ingredients,parsed_directions)
+    readable = readable_recipe(recipe_names, p_ingredient, p_direction)
+    for item in readable:
+      print(item)
+    reiteration(url)
+
+
+  #exit out of the code
+  elif transform_type == '-1':
+    print("Now exiting...")
 
 
 

@@ -2,73 +2,49 @@ from parse_html import parse_html
 from transform_dicts import to_unhealthydict
 
 
-def transform_unhealthy(recipe, ):
-	#initialize a list and a counter and also get the parsed html
-	newingredients=[]
+def transform_unhealthy(name, ingredients, directions):
+	#create counters for the ingredients and directions
 	counti=-1
 	countd=-1
-	# recipe = parse_html()
-	name=recipe['name']
-	directions=recipe['directions']
-	ingredients=recipe["ingredients"]
-	# print(ingredients)
-	# print(directions)
+
 
 	#iterate through the name and change the name to the substitutions
 	for subst in to_unhealthydict:
 		if subst in name.lower():
 			subst1=subst.title()
 			name=name.replace(subst1,to_unhealthydict[subst].title())
-	print(name)
 
 
-	# version 1 (also works/ don't delete)
-		#iterate through the ingredients list and see if the words are in the tounhealthy dict and then change it accordingly.
-	for word in ingredients:
+	#iterate through the ingredients list and see if the words are in the to_unhealthydict dict and then change it accordingly.
+	for dicts in ingredients:
 		counti+=1
 		for subst in to_unhealthydict:
-			if subst in word:
+			if subst in dicts['name']:
 				# newingredients.append(subst)
-				word=word.replace(subst, to_unhealthydict[subst])
-				ingredients[counti]=word
+				dicts['name']=dicts['name'].replace(subst, to_unhealthydict[subst])
+				ingredients[counti]['name']=dicts['name']
 		
-	print(ingredients)
 
-	#iterate through the directions list and see if the words are in the tounhealthy dict and then change it accordingly.
-	for words in directions:
+	#iterate through the directions list and see if the words are in the to_unhealthydict dict and then change it accordingly.
+	for dcts in directions:
 		countd+=1
+		countpi=-1
 		for ing in to_unhealthydict:
-			if ing in words:
-				words=words.replace(ing,to_unhealthydict[ing])
-				directions[countd]=words
+			if ing in dcts['original']:
+				dcts['original']=dcts['original'].replace(ing,to_unhealthydict[ing])
+				directions[countd]['original']=dcts['original']
+			if ing in dcts['method']:
+				dcts['method']=dcts['method'].replace(ing,to_unhealthydict[ing])
+				directions[countd]['method']=dcts['method'] 
+		for ingredient in dcts['ingredients']:
+			countpi+=1
+			for ing in to_unhealthydict:
+				if ing in ingredient:
+					ingredient=ingredient.replace(ing, to_unhealthydict[ing])
+			dcts['ingredients'][countpi]=dcts['ingredients'][countpi].replace(dcts['ingredients'][countpi],ingredient)
 
-	print(directions)
 
-	# version 2(also works)
-	# #iterate through the ingredients list and see if the words are in the tounhealthy dict and then change it accordingly.
-	# for word in ingredients:
-	# 	counti+=1
-	# 	for subst in tounhealthy:
-	# 		if subst in word:
-	# 			newingredients.append(subst)
-	# 			ingredients[counti]=word.replace(subst, tounhealthy[subst])
-		
-	# print(ingredients)
-
-	# #iterate through the directions list and see if the words are in the tounhealthy dict and then change it accordingly.
-	# for words in directions:
-	# 	countd+=1
-	# 	for ing in newingredients:
-	# 		if ing in words:
-	# 			words=words.replace(ing,tounhealthy[ing])
-	# 			directions[countd]=words
-
-	# print(directions)
-	
 	return name, ingredients, directions
 
 
 
-
-if __name__ == '__main__':
-	transform_unhealthy()

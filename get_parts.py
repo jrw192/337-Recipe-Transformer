@@ -150,8 +150,8 @@ def parse_ingredient_list(ingredients):
 		parsed = parse_one_ingredient(ingredient)
 		for item in parsed:
 			parsed_ingredients.append(item)
-		print(ingredient)
-		print(parsed)
+		# print(ingredient)
+		# print(parsed)
 	return parsed_ingredients
 
 #if 'JJ' in tag => adjective
