@@ -16,14 +16,9 @@ def transform_korean(name, ingredients, directions):
   # transform recipe name
   name_parts = name.split()
   for part in name_parts:
-<<<<<<< Updated upstream
     # print (part)
-=======
->>>>>>> Stashed changes
     if part in to_korean_dict.keys():
       name.replace(part, to_korean_dict[part])
-
-  name = "Korean Style " + name
 
   # transform ingredients
   for ingredient in ingredients:
@@ -36,11 +31,8 @@ def transform_korean(name, ingredients, directions):
   
   # transform steps
   for step in directions:
-<<<<<<< Updated upstream
     # print(step)
-=======
     flag = False
->>>>>>> Stashed changes
     new_ingredients = []
     for ingredient in step['ingredients']:
       ingreds = ingredient.split()
