@@ -196,7 +196,7 @@ to_healthydict={
 	'sausage': 'turkey sausage',
 	'white rice': 'brown rice',
 	'rice': 'brown rice',
-	'pasta': 'whole-grain pasta',
+	# 'pasta': 'whole-grain pasta',
 	'spaghetti': 'whole-grain spaghetti',
 	'bread': 'whole-grain bread',
 	'penne': 'whole-grain penne',
