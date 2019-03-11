@@ -1,8 +1,151 @@
+meat_dict = {
+	"chicken": "meat",
+	"beef": "meat",
+	"pork": "meat",
+	"duck": "meat",
+	"turkey": "meat",
+	"sausage": "meat",
+	"bacon": "meat",
+	"steak": "meat",
+	"goose": "meat",
+	"patty": "meat"
+}
 
+fish_dict = {
+	"salmon": "fish",
+	"tuna": "fish",
+	"halibut": "fish",
+	"trout": "fish",
+	"flounder": "fish",
+	"tilapia": "fish",
+	"sea bass": "fish",
+	"fillet": "fish",
+	"mackerel": "fish",
+	"cod": "fish",
+	"mussel": "fish",
+	"shrimp": "fish",
+	"prawn": "fish",
+	"mahi-mahi": "fish",
+	"char": "fish",
+	"haddock": "fish",
+	"sturgeon": "fish",
+	"perch": "fish",
+	"eel": "fish",
+	"albacore": "fish",
+	"perch": "fish",
+	"grouper": "fish",
+	"catfish": "fish",
+	"herring": "fish",
+	"shark": "fish",
+	"swordfish": "fish",
+	"anchovy": "fish"
+}
+
+veg_sub_dict = []
 
 to_vegetariandict = {
-  'boneless pork loin chop': 'tofurkey',
-  'pork': 'tofurkey'
+  	# Meats, Poultry and Fish
+	"chicken": "meat",
+	"beef": "meat",
+	"pork": "meat",
+	"duck": "meat",
+	"turkey": "meat",
+	"sausage": "meat",
+	"bacon": "meat",
+	"steak": "meat",
+	"goose": "meat",
+	"salmon": "meat",
+	"tuna": "meat",
+	"halibut": "meat",
+	"trout": "meat",
+	"flounder": "meat",
+	"tilapia": "meat",
+	"sea bass": "meat",
+	"fillet": "meat",
+	"mackerel": "meat",
+	"cod": "meat",
+	"mussel": "meat",
+	"shrimp": "meat",
+	"prawn": "meat",
+	"mahi-mahi": "meat",
+	"char": "meat",
+	"haddock": "meat",
+	"sturgeon": "meat",
+	"perch": "meat",
+	"eel": "meat",
+	"albacore": "meat",
+	"perch": "meat",
+	"grouper": "meat",
+	"catfish": "meat",
+	"herring": "meat",
+	"shark": "meat",
+	"swordfish": "meat",
+	"anchovy": "meat",
+
+	# Smoked Meats
+	"salami": "seasoned/smoked meat",
+	"prosciutto": "seasoned/smoked meat",
+	"chorizo": "seasoned/smoked meat",
+	"coppa": "seasoned/smoked meat",
+	"cervelat": "seasoned/smoked meat",
+	"culatello": "seasoned/smoked meat",
+	"guanciale": "seasoned/smoked meat",
+	"jamon": "seasoned/smoked meat",
+	"lardo": "seasoned/smoked meat",
+	"pancetta": "seasoned/smoked meat",
+	"pepperoni": "seasoned/smoked meat",
+	"soppressata": "seasoned/smoked meat",
+	
+	# Broths
+	"chicken broth": "broth",
+	"beef broth": "broth",
+	"fish broth": "broth",
+	"broth": "broth",
+
+	# Stocks
+	"chicken stock": "stock",
+	"beef stock": "stock",
+	"fish stock": "stock",
+
+	# Sauces
+	"fish sauce": "sauce",
+	"oyster sauce": "sauce",
+	"shrimp paste": "sauce", #idk if this is a sauce
+
+	# Gelatin
+	"gelatin": "gelatin",
+}
+
+to_non_vegetariandict = {
+	# Meat sub
+	"tofu": "meat sub",
+	"tempeh": "meat sub",
+	"jackfruit": "meat sub",
+	"mushroom": "meat sub",
+	"seitan": "meat sub",
+	"bean": "meat sub",
+	"eggplant": "meat sub",
+	"lentil": "meat sub",
+	"beet": "meat sub",
+
+	# Seasoned meat sub
+	"crumbled tofu seasoned with fennel": "seasoned meat sub",
+	"parsley and garlic": "seasoned meat sub",
+	"roasted vegetables": "seasoned meat sub",
+	"toasted nuts": "seasoned meat sub",
+	"smoked tofu": "seasoned meat sub",
+
+	# Broth sub
+	"mushroom broth": "broth sub",
+	"vegetable broth": "broth sub",
+
+	# stock sub
+	"vegetable stock": "stock sub",
+	"bouillon cubes": "stock sub",
+
+	# Sauce sub
+	"soy sauce": "sauce sub",
+	"vegetarian oyster sauce": "sauce sub"
 }
 
 #original to healthy
