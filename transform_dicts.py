@@ -77,6 +77,7 @@ to_vegetariandict = {
 	"salmon": "meat",
 	"tuna": "meat",
 	"halibut": "meat",
+	"hot dog":'meat',
 	"trout": "meat",
 	"flounder": "meat",
 	"tilapia": "meat",

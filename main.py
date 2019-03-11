@@ -38,7 +38,7 @@ def main():
 def reiteration(url): #added this function because in class he said the code shouldnt just exit, it should keep asking about transforms until you exit out of it
   transform_type = input("\nEnter Corresponding Number for Transformation: \n"
     " 0 for Original Recipe \n" " 1 for transformation to healthy \n" " 2 for transformation unhealthy \n" " 3 for transformation to vegetarian \n" 
-    " 4 for transformation to non-vegetarian \n" " 5 for transformation to Style of Cuisine: Sicilian Cuisine \n" " 6 for transformation to Style of Cuisine: Korean Cuisine \n" " 8 to enter a url for a different recipe\n" " 9 to Exit \n")
+    " 4 for transformation to non-vegetarian \n" " 5 for transformation to Style of Cuisine: Sicilian Cuisine \n" " 6 for transformation to Style of Cuisine: Korean Cuisine \n" " 7 to enter a url for a different recipe\n" " 8 to Exit \n")
      # 6 for transformation to Style of Cuisine: Indonesian Cuisine
   # display_type = input("Enter 0 to view the full recipe, 1 to view the ingredients list, 2 to view all required tools, 3 to view all methods, 4 to view all steps.\n")
   
@@ -134,13 +134,11 @@ def reiteration(url): #added this function because in class he said the code sho
       print(item)
     reiteration(url)
 
-  #transform to Indonesian Cuisine
-
-  elif transform_type == "8":
+  elif transform_type == "7":
     main()
 
   #exit out of the code
-  elif transform_type == '9':
+  elif transform_type == '8':
     print("Now exiting...")
 
 
