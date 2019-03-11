@@ -1,5 +1,6 @@
 from parse_html import parse_html
 from transform_dicts import to_healthydict,to_unhealthydict, to_vegetariandict
+from to_vegetarian import transform_vegetarian
 from to_unhealthy import transform_unhealthy
 from to_healthy import transform_healthy
 from to_sicilian import transform_siciliancuisine
@@ -105,7 +106,11 @@ def reiteration(url): #added this function because in class he said the code sho
 
   #transform to vegetarian
   elif transform_type =="3":
-    pass
+    recipe_names,p_ingredient, p_direction = transform_vegetarian(name,parsed_ingredients,parsed_directions)
+    readable = readable_recipe(recipe_names, p_ingredient, p_direction)
+    for item in readable:
+      print(item)
+    reiteration(url)
 
   #transform to non-vegetarian
   elif transform_type =="4":
@@ -163,6 +168,7 @@ def readable_recipe(name, ingredients, steps):
     step_time = 'Time: '
     step_ingred = 'Ingredients: '
     step_method = 'Method: '
+    step_tools = 'Tools: '
 
     if len(step['times']) > 0:
       step_time += ', or '.join(step['times'])
@@ -179,7 +185,13 @@ def readable_recipe(name, ingredients, steps):
     else:
       step_ingred += 'N/A'
 
-    step_tools = 'Tools: ' + ', '.join(step['tools'])
+    # If there are no tools, step['tools'] = [[]], so old code didn't work
+    if len(step['tools']) == 0:
+      step_tools += 'N/A'
+    elif step['tools'][0] == []:
+      step_tools += 'N/A'
+    else:
+      step_tools += ', '.join(step['tools'])
 
 
     step_arr = [step_method, step_ingred, step_tools, step_time]
