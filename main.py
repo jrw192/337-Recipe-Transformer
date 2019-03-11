@@ -36,8 +36,8 @@ def main():
 def reiteration(url): #added this function because in class he said the code shouldnt just exit, it should keep asking about transforms until you exit out of it
   transform_type = input("\nEnter Corresponding Number for Transformation: \n"
     " 0 for Original Recipe \n" " 1 for transformation to healthy \n" " 2 for transformation unhealthy \n" " 3 for transformation to vegetarian \n" 
-    " 4 for transformation to non-vegetarian \n" " 5 for transformation to Style of Cusine: Sicilian Cuisine \n" " 9 to Exit \n")
-     # 2 for transformation to unhealthy, 3 for vegetarian, 4 for not-vegetarian, 5 for Indonesian, \n")
+    " 4 for transformation to non-vegetarian \n" " 5 for transformation to Style of Cuisine: Sicilian Cuisine \n" " 9 to Exit \n")
+     # 6 for transformation to Style of Cuisine: Indonesian Cuisine
   # display_type = input("Enter 0 to view the full recipe, 1 to view the ingredients list, 2 to view all required tools, 3 to view all methods, 4 to view all steps.\n")
   
   recipe_dict = parse_html(url)
@@ -78,13 +78,6 @@ def reiteration(url): #added this function because in class he said the code sho
   
   # print('parsed directions: ' , parsed_directions)
   # print('parsed ingredients: ', parsed_ingredients)
-
-
-  # new_name, new_ing, new_dir = to_veg(name (string), parsed_ingredients (change name)(list of dictionary), parsed_directions, all_ingredients)
-  # print(name)
-  # print(parsed_ingredients[0])
-  # print(parsed_directions)
-  # print(all_ingredients)
 
   #original recipe
   if transform_type == "0":

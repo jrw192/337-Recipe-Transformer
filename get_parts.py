@@ -24,7 +24,6 @@ m_f.close()
 #takes in one ingredient listing and returns a dictionary of name, quantity, measurement, preparation
 def parse_one_ingredient(listing):
 	split_information = []
-	# print(listing)
 	rest = listing #we will be splitting the listing several times based on found values
 
 	# this assumes that if parenthesis contains measurement/quantity,
@@ -168,6 +167,8 @@ def get_ingredient_name(string):
 			break
 		if 'NN' in item[1] or 'JJ' in item[1] or item[0] == 'and':
 			entities.append(item[0])
+	if entities[-1] == 'and':
+		entities = entities[:-1]
 	entities = ' '.join(entities)
 	return entities
 

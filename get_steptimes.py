@@ -28,7 +28,6 @@ def get_steptimes(step):
 				temp_step  = temp_step.split(time)[1] #continue searching with the rest of the step
 
 	# print(times)
-	# time = ', or '.join(times)
 	return times
 
 

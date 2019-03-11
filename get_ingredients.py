@@ -1,4 +1,5 @@
 import re
+import string
 
 #imports from other files
 from get_parts import parse_ingredient_list
@@ -20,14 +21,14 @@ def get_ingredients_in_step(step, ingredient_list):
 			ing_re = '\s' + ingred_arr[0] + '[\s.,]'
 			ingred_search = re.search(ing_re, step)
 			if ingred_search:
-				ingred_name = ingred_search.group(0).lstrip().rstrip()
-				ingredients_used.append(ingred_name)
+				# ingred_name = ingred_search.group(0).lstrip().rstrip()
+				# print("ingredient: ", ingred_name)
+				ingredients_used.append(ingred_arr[0])
 
 		else:
 			for start in range(0, len(ingred_arr)): #try different phrase start points
 				found_ingredient = find_one_ingredient(step, ingred_arr, start)
 				if found_ingredient:
-					# print('found ingredient: ', ingredient)
 					if ingredient not in ingredients_used:
 						ingredients_used.append(ingredient)
 					break #break if we find one.... if we found 'olive oil' we don't need to find 'oil'	
