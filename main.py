@@ -121,7 +121,7 @@ def reiteration(url): #added this function because in class he said the code sho
   elif transform_type == "5":
     recipe_names,p_ingredient, p_direction = transform_siciliancuisine(name,parsed_ingredients,parsed_directions)
     readable = readable_recipe(recipe_names, p_ingredient, p_direction)
-    print('\nSicilian Style Cuisine:') #should i add this to the name
+    print('\nSicilian Style Cuisine:')
     for item in readable:
       print(item)
     reiteration(url)
@@ -130,6 +130,7 @@ def reiteration(url): #added this function because in class he said the code sho
   elif transform_type == "6":
     recipe_names,p_ingredient, p_direction = transform_korean(name,parsed_ingredients,parsed_directions)
     readable = readable_recipe(recipe_names, p_ingredient, p_direction)
+    print('\nKorean Style Cuisine:')
     for item in readable:
       print(item)
     reiteration(url)
