@@ -41,9 +41,29 @@ fish_dict = {
 	"anchovy": "fish"
 }
 
-veg_sub_dict = []
+
+#### To and from Vegetarian
+
+veg_sub_dict = {
+	"meat": ["tofu", "tempeh", "jackfruit", "mushroom", "seitan", "bean", "eggplant", "lentil", "beet"],
+	"seasoned/smoked meat": ["crumbled tofu seasoned with fennel", "parsley and garlic", "roasted vegetables", "toasted nuts", "smoked tofu"],
+	"sauce": ["soy sauce", "vegetarian oyster sauce"],
+	"broth": ["mushroom broth", "vegetable broth"],
+	"stock": ["vegetable stock", "bouillon cubes"],
+	"gelatin" : ["agar-agar", "guar gum", "xanthan gum"]
+}
+
+non_veg_sub_dict = {
+	"meat sub": ["chicken", "pork", "duck", "turkey", "sausage", "bacon", "salmmon", "tuna", "sea bass", "cod"],
+	"seasoned meat sub": ["salami, prosciutto, chorizo, pepperoni, pancetta"],
+	"sauce sub": ["fish sauce, oyster sauce"],
+	"broth sub": ["chicken broth", "beef broth"],
+	"stock sub": ["chicken stock", "beef stock", "fish stock"]
+}
 
 to_vegetariandict = {
+	# Classifies an ingredient
+
   	# Meats, Poultry and Fish
 	"chicken": "meat",
 	"beef": "meat",
@@ -148,6 +168,8 @@ to_non_vegetariandict = {
 	"vegetarian oyster sauce": "sauce sub"
 }
 
+####### To and from healthy
+
 #original to healthy
 to_healthydict={
 	'beef': 'turkey',
@@ -226,6 +248,8 @@ to_unhealthydict={
 	'green pepper':'fried green pepper'
 
 }
+
+####### To and from Sicilian
 
 #style of cuisine: Sicilian Cuisine (Sicily in Italy)
 to_siciliandict={
