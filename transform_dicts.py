@@ -47,9 +47,9 @@ to_healthydict={
 	'milk' : 'almond milk',
 	# 'oil' : 'vegetable oil',
 	'soy sauce':'coconut aminos',
-	'frying' : 'grilling or baking',
-	'fried':'grilled or baked',
-	'fry':'grill or bake',
+	# 'frying' : 'grilling or baking',
+	# 'fried':'grilled or baked',
+	# 'fry':'grill or bake',
 	'cornstarch':'wheat flour',
 	'chocolate':'dark-chocolate'
 }
@@ -159,6 +159,9 @@ to_siciliandict={
 }
 
 to_korean_dict={
+  'vegetable oil':'sesame oil',
+  'olive oil':'sesame oil',
+  'cocunut oil':'sesame oil',
   'oil': 'sesame oil',
   'ketchup': 'gochujang',
   'salt': 'soy sauce',
