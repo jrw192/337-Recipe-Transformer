@@ -1,6 +1,7 @@
 from parse_html import parse_html
 from transform_dicts import to_healthydict,to_unhealthydict, to_vegetariandict
 from to_vegetarian import transform_vegetarian
+from to_nonvegetarian import transform_nonvegetarian
 from to_unhealthy import transform_unhealthy
 from to_healthy import transform_healthy
 from to_sicilian import transform_siciliancuisine
@@ -114,7 +115,11 @@ def reiteration(url): #added this function because in class he said the code sho
 
   #transform to non-vegetarian
   elif transform_type =="4":
-    pass
+    recipe_names,p_ingredient, p_direction = transform_nonvegetarian(name,parsed_ingredients,parsed_directions)
+    readable = readable_recipe(recipe_names, p_ingredient, p_direction)
+    for item in readable:
+      print(item)
+    reiteration(url)
 
 
   #transform to Sicilian Cuisine

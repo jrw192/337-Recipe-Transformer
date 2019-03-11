@@ -38,14 +38,14 @@ fish_dict = {
 	"herring": "fish",
 	"shark": "fish",
 	"swordfish": "fish",
-	"anchovy": "fish"
+	"anchovies": "fish"
 }
 
 
 #### To and from Vegetarian
 
 veg_sub_dict = {
-	"meat": ["tofu", "tempeh", "jackfruit", "mushroom", "seitan", "bean", "eggplant", "lentil", "beet"],
+	"meat": ["legumes", "cauliflower", "carrot", "broccoli", "potato", "tofu", "tempeh", "jackfruit", "mushroom", "seitan", "eggplant", "lentil", "beet"],
 	"seasoned/smoked meat": ["crumbled tofu seasoned with fennel", "parsley and garlic", "roasted vegetables", "toasted nuts", "smoked tofu"],
 	"sauce": ["soy sauce", "vegetarian oyster sauce"],
 	"broth": ["mushroom broth", "vegetable broth"],
@@ -54,7 +54,7 @@ veg_sub_dict = {
 }
 
 non_veg_sub_dict = {
-	"meat sub": ["chicken", "pork", "duck", "turkey", "sausage", "bacon", "salmmon", "tuna", "sea bass", "cod"],
+	"meat sub": ["steak", "chicken", "pork", "turkey", "sausage", "bacon", "salmon", "tuna", "sea bass", "cod"],
 	"seasoned meat sub": ["salami, prosciutto, chorizo, pepperoni, pancetta"],
 	"sauce sub": ["fish sauce, oyster sauce"],
 	"broth sub": ["chicken broth", "beef broth"],
@@ -101,7 +101,7 @@ to_vegetariandict = {
 	"herring": "meat",
 	"shark": "meat",
 	"swordfish": "meat",
-	"anchovy": "meat",
+	"anchovies": "meat",
 
 	# Smoked Meats
 	"salami": "seasoned/smoked meat",
@@ -139,12 +139,18 @@ to_vegetariandict = {
 
 to_non_vegetariandict = {
 	# Meat sub
+	"carrot": "meat sub",
+	"legumes": "meat sub",
+	"okara": "meat sub",
+	"cauliflower": "meat sub",
+	"broccoli": "meat sub",
+	"beans": "meat sub",
+	"potato": "meat sub",
 	"tofu": "meat sub",
 	"tempeh": "meat sub",
 	"jackfruit": "meat sub",
 	"mushroom": "meat sub",
 	"seitan": "meat sub",
-	"bean": "meat sub",
 	"eggplant": "meat sub",
 	"lentil": "meat sub",
 	"beet": "meat sub",
