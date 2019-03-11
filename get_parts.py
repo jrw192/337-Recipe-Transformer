@@ -167,8 +167,9 @@ def get_ingredient_name(string):
 			break
 		if 'NN' in item[1] or 'JJ' in item[1] or item[0] == 'and':
 			entities.append(item[0])
-	if entities[-1] == 'and':
-		entities = entities[:-1]
+	if len(entities) > 1:
+		if entities[-1] == 'and':
+			entities = entities[:-1]
 	entities = ' '.join(entities)
 	return entities
 
