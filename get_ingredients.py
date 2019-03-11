@@ -4,6 +4,10 @@ import string
 #imports from other files
 from get_parts import parse_ingredient_list
 
+#import data structures
+from transform_dicts import meat_dict
+from transform_dicts import fish_dict
+
 #extract ingredients used in one step
 
 def get_ingredients_in_step(step, ingredient_list):
@@ -32,6 +36,22 @@ def get_ingredients_in_step(step, ingredient_list):
 					if ingredient not in ingredients_used:
 						ingredients_used.append(ingredient)
 					break #break if we find one.... if we found 'olive oil' we don't need to find 'oil'	
+
+	# if we didn't find chicken, check if they just said 'cook the meat'
+	if 'meat' in step:
+		for ingredient in ingredient_list:
+			if check_if_type(ingredient, 'meat'):
+				if ingredient not in ingredients_used:
+					ingredients_used.append(ingredient)
+
+	if 'fish' in step:
+		for ingredient in ingredient_list:
+			if check_if_type(ingredient, 'fish'):
+				if ingredient not in ingredients_used:
+					ingredients_used.append(ingredient)
+
+
+
 	# print("ingredients used: ", ingredients_used)
 	return ingredients_used
 
@@ -55,6 +75,21 @@ def find_one_ingredient(step, ingred_arr, i):
 
 
 
+#check if food is a type of category (eg is boneless chicken breat a meat?)
+def check_if_type(food, category):
+	words = food.split(' ')
+	if category == 'meat':
+		meats = list(meat_dict.keys())
+		for word in words:
+			if word in meats:
+				return True
+	if category == 'fish':
+		fishes = list(fish_dict.keys())
+		for word in words:
+			if word in fishes:
+				return True
+
+	return False
 
 
 
@@ -73,6 +108,9 @@ def find_one_ingredient(step, ingred_arr, i):
 # 		print('step: ', step)
 # 		ingredients_in_step = get_ingredients_in_step(step, all_ingredients)
 # 		print(ingredients_in_step)
+
+# if __name__ == "__main__":
+# 	print(check_if_type('potato', 'fish'))
 
 
 
