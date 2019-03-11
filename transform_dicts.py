@@ -186,6 +186,7 @@ to_healthydict={
 	'pork': 'jackfruit',
 	'boneless':'',
 	'plain':'',
+	'meatless':'',
 	'meat':'meat/veggie',
 	'pork chops':'jackfruit',
 	# 'turkey': 'tofurkey',
