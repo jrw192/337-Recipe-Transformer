@@ -337,16 +337,21 @@ to_siciliandict={
 to_korean_dict={
   'vegetable oil':'sesame oil',
   'olive oil':'sesame oil',
-  'cocunut oil':'sesame oil',
+  'coconut oil':'sesame oil',
   'oil': 'sesame oil',
   'ketchup': 'gochujang',
+	'sauce': 'gochujang',
   'salt': 'soy sauce',
   'dill pickle':'kimchi',
   'pickle': 'kimchi',
   'pot roast': 'galbijjim',
   'maruchan': 'shin',
   'omelette': 'steamed egg',
-  'pancakes': 'hoddeok',
+  'pancakes': 'hoddeok(Korean pancake)',
   'noodle' : 'rice noodles',
+	'pasta': 'rice noodles',
+	'lasagna': 'rice noodles',
+	'lettuce': 'cabbage',
+	'wine': 'makkeolli (Korean rice wine)'
 } 
 
