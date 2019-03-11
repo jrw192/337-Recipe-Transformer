@@ -17,7 +17,7 @@ def transform_korean(name, ingredients, directions):
   # transform recipe name
   name_parts = name.split()
   for part in name_parts:
-    print (part)
+    # print (part)
     if part in to_korean_dict.keys():
       name.replace(part, to_korean_dict[part])
 
@@ -29,7 +29,7 @@ def transform_korean(name, ingredients, directions):
   
   # transform steps
   for step in directions:
-    print(step)
+    # print(step)
     new_ingredients = []
     for ingredient in step['ingredients']: 
       if ingredient in to_korean_dict.keys():
