@@ -11,12 +11,9 @@ from transform_dicts import to_korean_dict
 #          list of strings - transformed ingredients list
 ###
 def transform_korean(name, ingredients, directions):
-  ingred_transformed = {}
-
   # transform recipe name
   name_parts = name.split()
   for part in name_parts:
-    # print (part)
     if part in to_korean_dict.keys():
       name.replace(part, to_korean_dict[part])
 
@@ -26,20 +23,18 @@ def transform_korean(name, ingredients, directions):
     ingreds = ingred_name.split()
     for ingred in ingreds:
       if ingred in to_korean_dict.keys():
-        ingredient['name'] = ingredient['name'].replace(ingred_name, to_korean_dict[ingred])
-        ingred_transformed[to_korean_dict[ingred]] = ingredient['name'].replace(ingred_name, to_korean_dict[ingred])
+        ingredient['name'] = ingredient['name'].replace(ingred, to_korean_dict[ingred])
   
   # transform steps
   for step in directions:
-    # print(step)
     flag = False
     new_ingredients = []
     for ingredient in step['ingredients']:
       ingreds = ingredient.split()
       for ingred in ingreds:
         if ingred in to_korean_dict.keys():
-          step['original'] = step['original'].replace(ingredient, to_korean_dict[ingred])
-          new_ingredients.append(ingredient.replace(ingredient, to_korean_dict[ingred]))
+          step['original'] = step['original'].replace(ingred, to_korean_dict[ingred])
+          new_ingredients.append(ingredient.replace(ingred, to_korean_dict[ingred]))
           flag = True
       if not flag:
         new_ingredients.append(ingredient)
@@ -48,7 +43,7 @@ def transform_korean(name, ingredients, directions):
 
   # add garnishing step
   new_step = {}
-  new_step['original'] = 'Garnish with green onions and ground sesame seeds.'
+  new_step['original'] = 'Garnish with green onions and ground sesame seeds'
   new_step['method'] = 'garnish'
   new_step['times'] = ''
   new_step['ingredients'] = ['green onions', 'sesame seeds']
@@ -64,5 +59,7 @@ def transform_korean(name, ingredients, directions):
     directions.insert(new_step, len(directions)-2)
   else:
     directions.append(new_step)
+
+    #Ingredient 2: poppyseed hot dog bun. Quantity: 1. Measure: . Preparation: 
 
   return name, ingredients, directions
