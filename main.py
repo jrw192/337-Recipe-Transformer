@@ -33,7 +33,7 @@ from get_tools import get_tools
 def main():
   # get dictionary of recipe parts 
   #added on for user input
-  url = input("Enter the url for the recipe, then hit enter:\n")
+  url = input("Enter the full url for the recipe, then hit enter:\n")
   reiteration(url) #added this function because in class he said the code shouldnt just exit, it should keep asking about transforms until you exit out of it
 
 def reiteration(url): #added this function because in class he said the code shouldnt just exit, it should keep asking about transforms until you exit out of it
